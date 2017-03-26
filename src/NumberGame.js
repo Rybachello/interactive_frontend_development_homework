@@ -1,7 +1,7 @@
 /**
  * Created by Rybachello on 3/23/2017.
  */
-class Game {
+class NumberGame {
 
     constructor(number) {
         this.isGameOver = false;
@@ -28,4 +28,4 @@ class Game {
         return this.isGameOver;
     }
 }
-export default Game;
+export default NumberGame;

@@ -1,7 +1,7 @@
 /**
  * Created by Rybachello on 3/23/2017.
  */
-import Game from '../src/Game';
+import Game from '../src/NumberGame';
 describe('Game Test', () => {
     it('game generate a random number between 0 and 9', () => {
         let game = new Game(0);
