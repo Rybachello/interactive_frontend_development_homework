@@ -1,0 +1,15 @@
+body {
+    margin: 50px;
+    justify-content: center;
+    display: flex;
+}
+.red{
+    color:red;
+}
+.green{
+    color: green;
+}
+.hint-list{
+    display: flex;
+    flex-direction: column-reverse;
+}

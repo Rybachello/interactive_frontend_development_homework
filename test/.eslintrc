@@ -1,0 +1,22 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "plugins": ["import"],
+  "globals": {
+    "expect":true
+  },
+  "extends": [
+    "eslint:recommended",
+    "google",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  rules: {
+    "max-len": ["error", 120],
+    "require-jsdoc": "off",
+    "comma-dangle": "off"
+  }
+}
