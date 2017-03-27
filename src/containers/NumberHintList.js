@@ -1,24 +1,25 @@
 /**
  * Created by Rybachello on 3/26/2017.
  */
-import React, {Component} from 'react';
-import NumberHint from '../components/NumberHint';
-const HintList = (props) => {
+import React from 'react';
+import NumberHint from './NumberHint';
+const NumberHintList = (props) => {
     const hintElements = props.hints.map((hint, idx) => {
         return (
             <NumberHint guess={hint.text} type={hint.type} key={idx}/>
         );
     });
     return (
-        <div className='hint-list'>
+        <div className='number-hint-list'>
             {hintElements}
         </div>
     );
 };
 
-HintList.propTypes = {
+NumberHintList.propTypes = {
     hints: React.PropTypes.arrayOf(React.PropTypes.shape({
-        guess: React.PropTypes.string,
+        text: React.PropTypes.string,
+        type: React.PropTypes.string,
     })).isRequired
 };
-export default HintList;
+export default NumberHintList;
