@@ -21,22 +21,26 @@ class App extends Component {
     }
 
     onNewWordGameClick() {
-        console.log("start new game!!");
-        //todo:finish here
+        const newWordGame = this.state.gameList.concat({type: 'word-game'});
+        this.setState({
+            gameList: newWordGame
+        });
     }
 
     render() {
         return (
             <div>
-                <button type="number-game-button" onClick={this.onNewNumberGameClick.bind(this)}>Create new Number
+                <button className="number-game-button" type="number-game-button" onClick={this.onNewNumberGameClick.bind(this)}>Create new Number
                     game
                 </button>
-                <button type="word-game-button" onClick={this.onNewWordGameClick.bind(this)}>Create new Word game</button>
+                <button className= "word-game-button" type="word-game-button" onClick={this.onNewWordGameClick.bind(this)}>Create new Word game
+                </button>
                 <GameList gameList={this.state.gameList}/>
             </div>
         );
     }
 }
+
 export default App;
 
 

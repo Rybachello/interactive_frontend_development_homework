@@ -1,28 +1,30 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
-import React, {Component} from 'react';
-import NumberGameApp from '../containers/NumberGameApp';
+import React from 'react';
+import NumberGameApp from './NumberGameApp';
+import WordGameApp from './WordGameApp';
 const GameList = (props) => {
     const gameElements = props.gameList.map((game, idx) => {
-        if (game.type = 'number-game') {
+        if (game.type == 'number-game') {
             return (
                 <NumberGameApp key={idx}>
                 </NumberGameApp>
             );
+        } else if (game.type == 'word-game') {
+            return (
+                <WordGameApp key={idx}>
+                </WordGameApp>
+            );
         }
     });
-    // else if (game.type = 'word-game'){
-    //         return(
-    //
-    //         )
-    //
-    // }
+
     return (
         <div className='game-list'>
             {gameElements}
         </div>
     );
 };
-
+GameList.propTypes = {
+    gameList: React.PropTypes.arrayOf(React.PropTypes.shape({
+        type: React.PropTypes.string,
+    })).isRequired
+};
 export default GameList;

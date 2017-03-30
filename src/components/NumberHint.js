@@ -1,10 +1,7 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
-import React, {Component} from 'react';
+import React from 'react';
 const NumberHint = (props) => {
     return (
-        <div className='hint'>
+        <div className='number-hint'>
             <font size='4' className={props.type == 'correct'?'green':'red'}>
                 {props.guess}
             </font>

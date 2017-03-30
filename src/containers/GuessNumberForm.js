@@ -1,6 +1,3 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
 import React, {Component} from 'react';
 class GuessNumberForm extends Component {
     constructor(props) {
@@ -29,18 +26,19 @@ class GuessNumberForm extends Component {
         return (
             <div className='guess-form'>
                 <font size='4'>Guess a number from 0 to 9</font>
-                <br/>
-                <br/>
-                <input type='text'
-                       value={this.state.number}
-                       onChange={this.handleNumberChange.bind(this)}
-                       onKeyUp={this.handleEnter.bind(this)}
+                <div>
+                    <input type='text'
+                            value={this.state.number}
+                            onChange={this.handleNumberChange.bind(this)}
+                            onKeyUp={this.handleEnter.bind(this)}
                 />
+                </div>
             </div>
         );
     }
 }
 GuessNumberForm.propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
+    number: React.PropTypes.string
 };
 export default GuessNumberForm;

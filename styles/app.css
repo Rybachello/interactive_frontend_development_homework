@@ -9,7 +9,11 @@ body {
 .green{
     color: green;
 }
-.hint-list{
+.number-hint-list{
+     display: flex;
+     flex-direction: column-reverse;
+}
+.word-hint-list{
     display: flex;
     flex-direction: column-reverse;
 }
