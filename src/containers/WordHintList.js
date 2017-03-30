@@ -17,7 +17,9 @@ const WordHintList = (props) => {
 };
 
 WordHintList.propTypes = {
-    word:React.PropTypes.string,
-    matches :React.PropTypes.array,
+    hints: React.PropTypes.arrayOf(React.PropTypes.shape({
+        text: React.PropTypes.string,
+        matches: React.PropTypes.array,
+    })).isRequired
 };
 export default WordHintList;

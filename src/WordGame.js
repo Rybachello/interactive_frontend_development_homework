@@ -10,7 +10,6 @@ class WordGame {
     generateWord() {
         let words = ['paper', 'grill', 'basil', 'hinge', 'ruler'];
         this.targetWord = words[Math.floor(Math.random() * words.length)];
-        console.log("Generated word: "+ this.targetWord);
     }
 
     guess(word) {

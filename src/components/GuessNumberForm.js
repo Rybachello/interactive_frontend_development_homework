@@ -40,5 +40,8 @@ class GuessNumberForm extends Component {
         );
     }
 }
-
+GuessNumberForm.propTypes = {
+    onSubmit: React.PropTypes.func.isRequired,
+    number: React.PropTypes.string
+};
 export default GuessNumberForm;
