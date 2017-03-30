@@ -11,7 +11,7 @@ describe('WordGameApp', () => {
         expect(shallow(<WordGameApp />)).to.exist;
     });
 
-    it('initially renders number hint list', () => {
+    it('initially renders word hint list', () => {
         expect(
             shallow(<WordGameApp />)
         ).to.contain(

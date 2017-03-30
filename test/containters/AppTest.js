@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 
 import App from '../../src/containers/App';
 import GameList from '../../src/components/GameList';
-import NumberGameApp from '../../src/components/NumberGameApp';
+
 describe('App', () => {
 
     it('renders', () => {

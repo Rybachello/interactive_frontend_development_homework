@@ -30,10 +30,11 @@ class App extends Component {
     render() {
         return (
             <div>
-                <button className="number-game-button" type="number-game-button" onClick={this.onNewNumberGameClick.bind(this)}>Create new Number
-                    game
+                <button className="number-game-button" type="number-game-button"
+                        onClick={this.onNewNumberGameClick.bind(this)}>Create new Number game
                 </button>
-                <button className= "word-game-button" type="word-game-button" onClick={this.onNewWordGameClick.bind(this)}>Create new Word game
+                <button className= "word-game-button" type="word-game-button"
+                        onClick={this.onNewWordGameClick.bind(this)}>Create new Word game
                 </button>
                 <GameList gameList={this.state.gameList}/>
             </div>

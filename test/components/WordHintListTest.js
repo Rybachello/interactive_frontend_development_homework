@@ -12,7 +12,7 @@ describe('WordHintList', () => {
         )).to.exist;
     });
 
-    it('renders no WordHintList components without word hints', () => {
+    it('renders WordHintList components without word hints', () => {
         expect(shallow(<WordHintList hints={[]}/>))
             .to.not.contain.descendants(WordHint);
     });
