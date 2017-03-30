@@ -30,7 +30,7 @@ describe('App', () => {
     });
 
     it('create a new word game when pressed on Create Word Game button', () => {
-         const app = shallow(<App />);
+        const app = shallow(<App />);
 
         app.find('.word-game-button').simulate('click');
 
@@ -39,6 +39,11 @@ describe('App', () => {
         ).to.contain(
             <GameList gameList={[{type: 'word-game'}]}/>
         );
+    });
+
+    it('has two buttons', () => {
+        const app = shallow(<App />);
+        expect(app).to.have.exactly(2).descendants('button');
     });
 });
 
