@@ -3,8 +3,8 @@
  */
 import React, {Component} from 'react';
 import NumberGame from '../NumberGame';
-import GuessNumberForm from './GuessNumberForm';
-import NumberHintList from '../containers/NumberHintList';
+import GuessNumberForm from '../containers/GuessNumberForm';
+import NumberHintList from './NumberHintList';
 // new instance of game
 
 

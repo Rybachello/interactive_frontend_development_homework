@@ -1,6 +1,3 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
 import React from 'react';
 const NumberHint = (props) => {
     return (

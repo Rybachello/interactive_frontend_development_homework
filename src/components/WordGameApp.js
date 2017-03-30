@@ -1,9 +1,6 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
 import React, {Component} from 'react';
-import WordHintList from '../containers/WordHintList';
-import GuessWordForm from './GuessWordForm';
+import WordHintList from './WordHintList';
+import GuessWordForm from '../containers/GuessWordForm';
 import WordGame from '../WordGame';
 
 class WordGameApp extends Component {

@@ -1,6 +1,3 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
 import React from 'react';
 const WordHint = (props) => {
     const letters = props.word.split('').map((x, idx) => {

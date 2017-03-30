@@ -1,6 +1,3 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
 import React from 'react';
 import NumberHint from './NumberHint';
 const NumberHintList = (props) => {

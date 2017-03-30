@@ -1,9 +1,3 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
-/**
- * Created by Rybachello on 3/26/2017.
- */
 import React, {Component} from 'react';
 class GuessWordForm extends Component {
     constructor(props) {

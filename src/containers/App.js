@@ -2,7 +2,7 @@
  * Created by Rybachello on 3/26/2017.
  */
 import React, {Component} from 'react';
-import GameList from '../containers/GameList';
+import GameList from '../components/GameList';
 
 
 class App extends Component {
@@ -30,10 +30,10 @@ class App extends Component {
     render() {
         return (
             <div>
-                <button type="number-game-button" onClick={this.onNewNumberGameClick.bind(this)}>Create new Number
+                <button className="number-game-button" type="number-game-button" onClick={this.onNewNumberGameClick.bind(this)}>Create new Number
                     game
                 </button>
-                <button type="word-game-button" onClick={this.onNewWordGameClick.bind(this)}>Create new Word game
+                <button className= "word-game-button" type="word-game-button" onClick={this.onNewWordGameClick.bind(this)}>Create new Word game
                 </button>
                 <GameList gameList={this.state.gameList}/>
             </div>
