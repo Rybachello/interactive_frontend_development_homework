@@ -3,16 +3,11 @@ import {shallow, render} from 'enzyme';
 
 import NumberHint from '../../src/components/NumberHint';
 describe('NumberHint', () => {
-    // For simple presentational components just smoke-testing that rendering
-    // succeeds is sufficient. If there is logic in the component, further
-    // testing is required.
     it('renders', () => {
         expect(shallow(
             <NumberHint guess='3:was under than target' type='incorrect'/>
         )).to.exist;
     });
-
-    // It is useful to test that containment works as expected.
     it('renders contained guess text', () => {
         expect(shallow(
             <NumberHint guess='3:was under than target' type='incorrect'/>
