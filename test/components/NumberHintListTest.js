@@ -17,7 +17,7 @@ describe('NumberHintList', () => {
             .to.not.contain.descendants(NumberHint);
     });
 
-    it('renders numberHint component for each comment', () => {
+    it('renders NumberHint component for each number', () => {
         const hints = [
             {guess:'3 was under than target',type:'incorrect'},
             {guess:'4 was under than target',type:'correct'}
