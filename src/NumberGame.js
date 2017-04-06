@@ -1,6 +1,3 @@
-/**
- * Created by Rybachello on 3/23/2017.
- */
 class NumberGame {
 
     constructor(number) {

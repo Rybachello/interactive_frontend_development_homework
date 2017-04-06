@@ -1,9 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-
 import App from '../../src/containers/App';
 import GameList from '../../src/components/GameList';
-
 describe('App', () => {
 
     it('renders', () => {

@@ -5,9 +5,6 @@ import React, {Component} from 'react';
 import NumberGame from '../NumberGame';
 import GuessNumberForm from '../containers/GuessNumberForm';
 import NumberHintList from './NumberHintList';
-// new instance of game
-
-
 class NumberGameApp extends Component {
     constructor(props) {
         super(props);

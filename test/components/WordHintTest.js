@@ -1,6 +1,5 @@
 import React from 'react';
 import {shallow, render} from 'enzyme';
-
 import WordHint from '../../src/components/WordHint';
 describe('WordHint', () => {
 

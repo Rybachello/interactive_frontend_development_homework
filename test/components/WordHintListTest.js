@@ -1,9 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-
 import WordHintList from '../../src/components/WordHintList';
 import WordHint from '../../src/components/WordHint';
-
 describe('WordHintList', () => {
 
     it('renders', () => {
@@ -22,9 +20,7 @@ describe('WordHintList', () => {
             {word: 'test1', matches: []},
             {word: 'test2', matches: []}
         ];
-
         const wordHintList = shallow(<WordHintList hints={hints}/>);
-
         expect(wordHintList).to.have.exactly(2).descendants(WordHint);
     });
 });

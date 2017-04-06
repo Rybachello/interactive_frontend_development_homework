@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import WordHintList from './WordHintList';
 import GuessWordForm from '../containers/GuessWordForm';
 import WordGame from '../WordGame';
-
 class WordGameApp extends Component {
     constructor(props) {
         super(props);
