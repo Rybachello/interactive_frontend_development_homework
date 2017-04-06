@@ -3,14 +3,14 @@ import NumberGameApp from '../containers/NumberGameApp';
 import WordGameApp from '../containers/WordGameApp';
 const GameList = (props) => {
     const gameElements = props.gameList.map((game, idx) => {
-        if (game.type == 'number-game') {
+        if (game.type === 'number-game') {
             return (
-                <NumberGameApp key={idx}>
+                <NumberGameApp game={game}  key={idx}>
                 </NumberGameApp>
             );
-        } else if (game.type == 'word-game') {
+        } else if (game.type === 'word-game') {
             return (
-                <WordGameApp key={idx}>
+                <WordGameApp game={game} key={idx}>
                 </WordGameApp>
             );
         }
