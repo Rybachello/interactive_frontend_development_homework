@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import GuessWordForm from '../../src/containers/GuessWordForm';
+import GuessWordForm from '../../src/components/GuessWordForm';
 describe('GuessWordForm', () => {
     it('renders', () => {
         expect(shallow(

@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import NumberGameApp from '../../src/components/NumberGameApp';
-import GuessNumberForm from '../../src/containers/GuessNumberForm';
+import NumberGameApp from '../../src/containers/NumberGameApp';
+import GuessNumberForm from '../../src/components/GuessNumberForm';
 import NumberHintList from '../../src/components/NumberHintList';
 describe('NumberGameApp', () => {
 

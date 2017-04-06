@@ -5,6 +5,8 @@ class GuessWordForm extends Component {
         this.state = {
             word: ''
         };
+        this.handleWordChange = this.handleWordChange.bind(this);
+        this.handleEnter = this.handleEnter.bind(this);
     }
 
     handleWordChange(event) {
@@ -28,8 +30,8 @@ class GuessWordForm extends Component {
                 <br/>
                 <input type='text'
                        value={this.state.word}
-                       onChange={this.handleWordChange.bind(this)}
-                       onKeyUp={this.handleEnter.bind(this)}
+                       onChange={this.handleWordChange}
+                       onKeyUp={this.handleEnter}
                 />
             </div>
         );
@@ -37,6 +39,8 @@ class GuessWordForm extends Component {
 }
 GuessWordForm.propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
-    word: React.PropTypes.string
+    word: React.PropTypes.string,
+    handleWordChange: React.PropTypes.func.isRequired,
+    handleEnter: React.PropTypes.func.isRequired
 };
 export default GuessWordForm;
