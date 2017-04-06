@@ -3,6 +3,7 @@
  */
 import React, {Component} from 'react';
 import GameList from '../components/GameList';
+
 class App extends Component {
     constructor(props) {
         super(props);

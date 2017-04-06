@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import WordHintList from './WordHintList';
-import GuessWordForm from '../containers/GuessWordForm';
+import WordHintList from '../components/WordHintList';
+import GuessWordForm from '../components/GuessWordForm';
 import WordGame from '../WordGame';
 class WordGameApp extends Component {
     constructor(props) {

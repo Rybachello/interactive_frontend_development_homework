@@ -1,6 +1,6 @@
 import React from 'react';
-import NumberGameApp from './NumberGameApp';
-import WordGameApp from './WordGameApp';
+import NumberGameApp from '../containers/NumberGameApp';
+import WordGameApp from '../containers/WordGameApp';
 const GameList = (props) => {
     const gameElements = props.gameList.map((game, idx) => {
         if (game.type == 'number-game') {

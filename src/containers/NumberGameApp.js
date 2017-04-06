@@ -3,8 +3,8 @@
  */
 import React, {Component} from 'react';
 import NumberGame from '../NumberGame';
-import GuessNumberForm from '../containers/GuessNumberForm';
-import NumberHintList from './NumberHintList';
+import GuessNumberForm from '../components/GuessNumberForm';
+import NumberHintList from '../components/NumberHintList';
 class NumberGameApp extends Component {
     constructor(props) {
         super(props);

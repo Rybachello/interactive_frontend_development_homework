@@ -5,11 +5,14 @@ class GuessNumberForm extends Component {
         this.state = {
             number: ''
         };
+        this.handleEnter = this.handleEnter.bind(this);
+        this.handleNumberChange = this.handleNumberChange.bind(this);
     }
 
     handleNumberChange(event) {
         if (!isNaN(event.target.value)) {
-            this.setState({number: event.target.value});
+            const value = event.target.value;
+            this.setState({number: value});
         }
     }
 
@@ -29,8 +32,8 @@ class GuessNumberForm extends Component {
                 <div>
                     <input type='text'
                             value={this.state.number}
-                            onChange={this.handleNumberChange.bind(this)}
-                            onKeyUp={this.handleEnter.bind(this)}
+                            onChange={this.handleNumberChange}
+                            onKeyUp={this.handleEnter}
                 />
                 </div>
             </div>
@@ -39,6 +42,8 @@ class GuessNumberForm extends Component {
 }
 GuessNumberForm.propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
-    number: React.PropTypes.string
+    number: React.PropTypes.string,
+    handleNumberChange: React.PropTypes.func.isRequired,
+    handleEnter: React.PropTypes.func.isRequired
 };
 export default GuessNumberForm;
