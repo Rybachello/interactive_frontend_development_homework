@@ -12,4 +12,6 @@ const NumberHintList = (props) => {
         </div>
     );
 };
+
+//todo: write props
 export default NumberHintList;

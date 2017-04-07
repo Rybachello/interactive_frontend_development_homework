@@ -1,6 +1,3 @@
-/**
- * Created by Rybachello on 3/26/2017.
- */
 import React, {Component} from 'react';
 import GuessNumberForm from '../components/GuessNumberForm';
 import NumberHintList from '../components/NumberHintList';
@@ -24,7 +21,7 @@ const NumberGameApp = (props) => {
         );
     }
 };
-
+//todo: fix props
 NumberGameApp.PropTypes = {
   game: React.PropTypes.shape({
       moves: React.PropTypes.array

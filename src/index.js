@@ -16,3 +16,4 @@ ReactDOM.render(
     </Provider>,
     document.getElementById('root')
 );
+//todo: write props

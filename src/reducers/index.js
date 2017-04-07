@@ -25,7 +25,29 @@ const GamesReducer = (state = initialState, action) => {
                     }
                 }
             );
+        case WORD_GUESS:
+            return state.map((game)=>{
+                if(game.id!=action.payload.id){
+                    return game;
+                }
+                let result = [];
+                let length = game.target.length >= action.payload.word.length ? game.target.length : action.word.length;
+                for (let i = 0; i < length; i++) {
+                    if (action.payload.word[i] === game.target[i]) {
+                        result.push(i);
+                    }
+                }
+                return {
+                    ...game,
+                    isGameOver: game.target == action.payload.word,
+                    moves: game.moves.concat({
+                            matches: result,
+                            word: action.payload.word
+                        }
+                    )
+                }
 
+            });
         default:
             return state;
     }

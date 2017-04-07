@@ -10,7 +10,7 @@ const GameList = (props) => {
             );
         } else if (game.type === 'word-game') {
             return (
-                <WordGameApp game={game} key={idx}>
+                <WordGameApp game={game} onWordSubmit = {props.onWordSubmit} key={idx}>
                 </WordGameApp>
             );
         }
