@@ -1,11 +1,11 @@
-import {GAME_CREATION,NUMBER_GUESS,WORD_GUESS} from '../actions/actionType.js';
+import {GAME_CREATION, NUMBER_GUESS, WORD_GUESS} from '../actions/actionType.js';
 
 const WORDS = ['paper', 'grill', 'basil', 'hinge', 'ruler'];
 const MIN_NUMBER = 0;
 const MAX_NUMBER = 9;
 let nextId = 1;
 
-export const CreateGame = (type) => {
+export const createGame = (type) => {
     if (type === 'number-game') {
         return {
             type: GAME_CREATION,
@@ -31,26 +31,22 @@ export const CreateGame = (type) => {
     }
 };
 
-export const onNumberSubmit = (number,id) => {
+export const onNumberSubmit = (number, id) => {
     return {
         type: NUMBER_GUESS,
         payload: {
-            id:id,
-            number:number
+            id: id,
+            number: number
         }
-    }
+    };
 };
 
-export const onWordSubmit = (word,id) => {
+export const onWordSubmit = (word, id) => {
     return {
         type: WORD_GUESS,
-        payload:{
-            id:id,
-            word:word
+        payload: {
+            id: id,
+            word: word
         }
-    }
+    };
 };
-
-
-
-

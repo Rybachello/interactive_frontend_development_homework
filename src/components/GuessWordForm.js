@@ -36,5 +36,7 @@ class GuessWordForm extends Component {
         );
     }
 }
-//todo: props
+GuessWordForm.propTypes = {
+    onSubmit: React.PropTypes.func.isRequired,
+};
 export default GuessWordForm;

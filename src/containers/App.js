@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import GameContainer from '../containers/GameContainer';
 import GameCreationContainer from '../containers/GameCreationContainer';
 
@@ -9,9 +9,8 @@ const App = () => {
             <GameCreationContainer/>
             <GameContainer/>
         </div>
-    )
+    );
 };
 
 export default App;
-
 

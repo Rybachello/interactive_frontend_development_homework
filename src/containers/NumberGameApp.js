@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import GuessNumberForm from '../components/GuessNumberForm';
 import NumberHintList from '../components/NumberHintList';
 
@@ -7,7 +7,7 @@ const NumberGameApp = (props) => {
         return (
             <div className='number-game'>
                 <h2>Number Guess Game</h2>
-                <GuessNumberForm onSubmit={(number)=>props.onNumberSubmit(number,props.game.id)}/>
+                <GuessNumberForm onSubmit={(number) => props.onNumberSubmit(number, props.game.id)}/>
                 <NumberHintList moves={props.game.moves}/>
             </div>
         );
@@ -23,13 +23,14 @@ const NumberGameApp = (props) => {
 };
 //todo: fix props
 NumberGameApp.PropTypes = {
-  game: React.PropTypes.shape({
-      moves: React.PropTypes.array
-  })
+    game: React.PropTypes.shape({
+        moves: React.PropTypes.array
+    })
 };
 
 
 export default NumberGameApp;
+
 
 // onGuessNumber(number) {
 //     let guess = this.gameNumber.guess(number);
@@ -40,3 +41,4 @@ export default NumberGameApp;
 //         })
 //     });
 // }
+

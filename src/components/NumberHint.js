@@ -10,17 +10,19 @@ const NumberHint = (props) => {
                 return <span className='red'>{props.number}: was lower than target</span>;
             }
             case GT: {
-                return <span className='red'>{props.number}: was greater than target</span>
+                return <span className='red'>{props.number}: was greater than target</span>;
             }
         }
     };
 
     return (
         <div className='number-hint'>
-            {getResult()}
+            { getResult() }
         </div>
     );
 };
-
+// NumberHint.propTypes = {
+//     guess: React.string.isRequired,
+//     number: React.string.isRequired,
+// };
 export default NumberHint;
-//`${number}:was ` + ((number > this.targetNumber) ? 'greater' : 'under') + ' than target';

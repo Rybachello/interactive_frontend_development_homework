@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import WordHintList from '../components/WordHintList';
 import GuessWordForm from '../components/GuessWordForm';
 const WordGameApp = (props) => {

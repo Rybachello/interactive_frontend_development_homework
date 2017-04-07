@@ -22,12 +22,12 @@ const GamesReducer = (state = initialState, action) => {
                                 number: action.payload.number
                             }
                         )
-                    }
+                    };
                 }
             );
         case WORD_GUESS:
-            return state.map((game)=>{
-                if(game.id!=action.payload.id){
+            return state.map((game) => {
+                if (game.id != action.payload.id) {
                     return game;
                 }
                 let result = [];
@@ -45,8 +45,7 @@ const GamesReducer = (state = initialState, action) => {
                             word: action.payload.word
                         }
                     )
-                }
-
+                };
             });
         default:
             return state;
