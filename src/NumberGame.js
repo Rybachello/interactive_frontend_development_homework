@@ -1,13 +1,6 @@
 class NumberGame {
 
-    constructor(number) {
-        this.isGameOver = false;
-        this.targetNumber = number;
-    }
 
-    generateNumber(min, max) {
-        this.targetNumber = Math.floor(Math.random() * (max - min + 1) + min);
-    }
 
     guess(number) {
         if (number == this.targetNumber) {

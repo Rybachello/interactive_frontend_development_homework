@@ -1,14 +1,14 @@
 import {connect} from 'react-redux';
-import {NumberGuess,WordGuess} from '../actions';
+import {onNumberSubmit,onWordSubmit} from '../actions';
 import GameList from '../components/GameList';
 
 const mapDispatchToProps = (dispatch) => ({
-    NumberGuess: (number) => dispatch(NumberGuess(number)),
-    WordGuess:(word) => dispatch(WordGuess(word))
+    onNumberSubmit: (number,id) => dispatch(onNumberSubmit(number,id)),
+    onWordSubmit:(word,id) => dispatch(onWordSubmit(word,id))
 });
 const mapStateToProps = (state) => ({
     gameList:state
 });
 
-export default connect(undefined, mapDispatchToProps)(GameList);
+export default connect(mapStateToProps, mapDispatchToProps)(GameList);
 

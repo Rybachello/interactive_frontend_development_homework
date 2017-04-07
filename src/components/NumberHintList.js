@@ -1,9 +1,9 @@
 import React from 'react';
 import NumberHint from './NumberHint';
 const NumberHintList = (props) => {
-    const hintElements = props.hints.map((hint, idx) => {
+    const hintElements = props.moves.map((move, idx) => {
         return (
-            <NumberHint guess={hint.text} type={hint.type} key={idx}/>
+            <NumberHint guess={move.guess} number = {move.number} key={idx}/>
         );
     });
     return (
@@ -11,12 +11,5 @@ const NumberHintList = (props) => {
             {hintElements}
         </div>
     );
-};
-
-NumberHintList.propTypes = {
-    hints: React.PropTypes.arrayOf(React.PropTypes.shape({
-        text: React.PropTypes.string,
-        type: React.PropTypes.string,
-    })).isRequired
 };
 export default NumberHintList;

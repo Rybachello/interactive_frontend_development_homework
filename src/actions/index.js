@@ -14,7 +14,7 @@ export const CreateGame = (type) => {
                 id: nextId++,
                 isGameOver: false,
                 target: Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER + 1) + MIN_NUMBER),
-                move: []
+                moves: []
             }
         };
     } else if (type === 'word-game') {
@@ -25,25 +25,27 @@ export const CreateGame = (type) => {
                 id: nextId++,
                 isGameOver: false,
                 target: WORDS[Math.floor(Math.random() * WORDS.length)],
-                move: []
+                moves: []
             }
         };
     }
 };
 
-export const NumberGuess = ({number}) => {
+export const onNumberSubmit = (number,id) => {
     return {
         type: NUMBER_GUESS,
         payload: {
+            id:id,
             number:number
         }
     }
 };
 
-export const WordGuess = ({word}) => {
+export const onWordSubmit = (word,id) => {
     return {
         type: WORD_GUESS,
-        payload: {
+        payload:{
+            id:id,
             word:word
         }
     }
