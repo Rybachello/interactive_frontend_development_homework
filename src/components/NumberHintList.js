@@ -12,13 +12,12 @@ const NumberHintList = (props) => {
         </div>
     );
 };
-
-// NumberHintList.propTypes = {
-//     moves: React.PropTypes.arrayOf(
-//         React.PropTypes.shape({
-//             guess: React.string.isRequired,
-//             number: React.string.isRequired,
-//         })
-//     )
-// };
+NumberHintList.propTypes = {
+    moves: React.PropTypes.arrayOf(
+        React.PropTypes.shape({
+            guess: React.PropTypes.string.isRequired,
+            number: React.PropTypes.string.isRequired,
+        }).isRequired
+    )
+};
 export default NumberHintList;

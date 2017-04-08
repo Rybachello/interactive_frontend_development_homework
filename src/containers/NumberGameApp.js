@@ -21,24 +21,16 @@ const NumberGameApp = (props) => {
         );
     }
 };
-//todo: fix props
-NumberGameApp.PropTypes = {
+NumberGameApp.propTypes = {
     game: React.PropTypes.shape({
+        type: React.PropTypes.string,
+        id: React.PropTypes.number,
+        isGameOver: React.PropTypes.bool,
+        target: React.PropTypes.number,
         moves: React.PropTypes.array
-    })
+    }).isRequired,
+    onNumberSubmit: React.PropTypes.func.isRequired
 };
 
-
 export default NumberGameApp;
-
-
-// onGuessNumber(number) {
-//     let guess = this.gameNumber.guess(number);
-//     this.setState({
-//         hints: this.state.hints.concat({
-//             text: guess,
-//             type: this.gameNumber.getIsOverGame() ? 'correct' : 'incorrect',
-//         })
-//     });
-// }
 

@@ -21,8 +21,8 @@ const NumberHint = (props) => {
         </div>
     );
 };
-// NumberHint.propTypes = {
-//     guess: React.string.isRequired,
-//     number: React.string.isRequired,
-// };
+NumberHint.propTypes = {
+    guess: React.PropTypes.string,
+    number: React.PropTypes.string,
+};
 export default NumberHint;

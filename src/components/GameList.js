@@ -22,9 +22,12 @@ const GameList = (props) => {
         </div>
     );
 };
-GameList.propTypes = {
+ GameList.propTypes = {
     gameList: React.PropTypes.arrayOf(React.PropTypes.shape({
         type: React.PropTypes.string,
-    })).isRequired
+        id: React.PropTypes.number,
+        isGameOver: React.PropTypes.bool,
+        moves: React.PropTypes.array
+    }))
 };
 export default GameList;

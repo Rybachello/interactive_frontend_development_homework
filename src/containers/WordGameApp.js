@@ -20,6 +20,15 @@ const WordGameApp = (props) => {
         );
     }
 };
-//todo: props
+WordGameApp.propTypes = {
+    game: React.PropTypes.shape({
+        type: React.PropTypes.string,
+        id: React.PropTypes.number,
+        isGameOver: React.PropTypes.bool,
+        target: React.PropTypes.string,
+        moves: React.PropTypes.array
+    }).isRequired,
+    onWordSubmit: React.PropTypes.func.isRequired
+};
 
 export default WordGameApp;

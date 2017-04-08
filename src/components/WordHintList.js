@@ -12,11 +12,10 @@ const WordHintList = (props) => {
         </div>
     );
 };
-//
-// WordHintList.propTypes = {
-//     hints: React.PropTypes.arrayOf(React.PropTypes.shape({
-//         text: React.PropTypes.string,
-//         matches: React.PropTypes.array,
-//     })).isRequired
-// };
+WordHintList.propTypes = {
+    moves: React.PropTypes.arrayOf(React.PropTypes.shape({
+        word: React.PropTypes.string.isRequired,
+        matches: React.PropTypes.array.isRequired,
+    })).isRequired
+};
 export default WordHintList;

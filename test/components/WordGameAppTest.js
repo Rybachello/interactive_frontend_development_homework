@@ -6,25 +6,8 @@ import WordHintList from '../../src/components/WordHintList';
 describe('WordGameApp', () => {
 
     it('renders', () => {
-        expect(shallow(<WordGameApp />)).to.exist;
+        expect(shallow(<WordGameApp game={[]}/>)).to.exist;
     });
-
-    it('initially renders word hint list', () => {
-        expect(
-            shallow(<WordGameApp />)
-        ).to.contain(
-            <WordHintList hints={[]}/>
-        );
-    });
-
-    it('initially renders guess word form', () => {
-        expect(
-            shallow(<WordGameApp />)
-        ).to.contain.descendants(
-            GuessWordForm
-        );
-    });
-
 });
 
 
