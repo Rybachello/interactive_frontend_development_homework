@@ -1,29 +1,27 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-
 import NumberHintList from '../../src/components/NumberHintList';
 import NumberHint from '../../src/components/NumberHint';
-
 describe('NumberHintList', () => {
 
     it('renders', () => {
         expect(shallow(
-            <NumberHintList hints={[]}/>
+            <NumberHintList moves={[]}/>
         )).to.exist;
     });
 
     it('renders no NumberHintList components without number hints', () => {
-        expect(shallow(<NumberHintList hints={[]} />))
+        expect(shallow(<NumberHintList moves={[]} />))
             .to.not.contain.descendants(NumberHint);
     });
 
     it('renders NumberHint component for each number', () => {
         const hints = [
-            {guess:'3 was under than target',type:'incorrect'},
-            {guess:'4 was under than target',type:'correct'}
+            {number:'8',guess:'LT'},
+            {number:'9',type:'LT'}
         ];
 
-        const numberHintList = shallow(<NumberHintList hints={hints}/>);
+        const numberHintList = shallow(<NumberHintList moves={hints}/>);
 
         expect(numberHintList).to.have.exactly(2).descendants(NumberHint);
     });

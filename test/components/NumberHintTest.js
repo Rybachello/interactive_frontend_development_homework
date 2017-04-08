@@ -10,17 +10,17 @@ describe('NumberHint', () => {
     });
     it('renders contained guess text', () => {
         expect(shallow(
-            <NumberHint guess='3:was under than target' type='incorrect'/>
-        )).to.include.text('3:was under than target');
+            <NumberHint guess='LT' number='3'/>
+        )).to.include.text('3: was lower than target');
     });
     it('number hit element is with red color',() => {
         expect(shallow(
-            <NumberHint guess='3:was under than target' type='incorrect'/>
+            <NumberHint guess='LT' number='3'/>
             )).to.contain.descendants('.red');
     });
     it('number hit element is with green color',() => {
         expect(shallow(
-            <NumberHint guess='3:was under than target' type='correct'/>
+            <NumberHint guess='EQ' number='3'/>
         )).to.contain.descendants('.green');
     });
 });

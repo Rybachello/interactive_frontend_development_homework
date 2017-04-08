@@ -1,16 +1,16 @@
 import React from 'react';
-import NumberGameApp from './NumberGameApp';
-import WordGameApp from './WordGameApp';
+import NumberGameApp from '../containers/NumberGameApp';
+import WordGameApp from '../containers/WordGameApp';
 const GameList = (props) => {
     const gameElements = props.gameList.map((game, idx) => {
-        if (game.type == 'number-game') {
+        if (game.type === 'number-game') {
             return (
-                <NumberGameApp key={idx}>
+                <NumberGameApp game={game} onNumberSubmit={props.onNumberSubmit} key={idx}>
                 </NumberGameApp>
             );
-        } else if (game.type == 'word-game') {
+        } else if (game.type === 'word-game') {
             return (
-                <WordGameApp key={idx}>
+                <WordGameApp game={game} onWordSubmit={props.onWordSubmit} key={idx}>
                 </WordGameApp>
             );
         }
@@ -22,9 +22,12 @@ const GameList = (props) => {
         </div>
     );
 };
-GameList.propTypes = {
+ GameList.propTypes = {
     gameList: React.PropTypes.arrayOf(React.PropTypes.shape({
         type: React.PropTypes.string,
-    })).isRequired
+        id: React.PropTypes.number,
+        isGameOver: React.PropTypes.bool,
+        moves: React.PropTypes.array
+    }))
 };
 export default GameList;

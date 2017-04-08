@@ -5,6 +5,7 @@ class GuessWordForm extends Component {
         this.state = {
             word: ''
         };
+        this.setState = this.setState.bind(this);
     }
 
     handleWordChange(event) {
@@ -37,6 +38,5 @@ class GuessWordForm extends Component {
 }
 GuessWordForm.propTypes = {
     onSubmit: React.PropTypes.func.isRequired,
-    word: React.PropTypes.string
 };
 export default GuessWordForm;
