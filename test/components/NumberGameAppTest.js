@@ -5,8 +5,8 @@ import GuessNumberForm from '../../src/components/GuessNumberForm';
 import NumberHintList from '../../src/components/NumberHintList';
 describe('NumberGameApp', () => {
 
-    it('renders', () => {
-        expect(shallow(<NumberGameApp game={[]}/>)).to.exist;
-    });
+    // it('renders', () => {
+    //     expect(shallow(<NumberGameApp game={[]}/>)).to.exist;
+    // });
 });
 

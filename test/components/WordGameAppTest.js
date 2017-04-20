@@ -5,9 +5,9 @@ import GuessWordForm from '../../src/components/GuessWordForm';
 import WordHintList from '../../src/components/WordHintList';
 describe('WordGameApp', () => {
 
-    it('renders', () => {
-        expect(shallow(<WordGameApp game={[]}/>)).to.exist;
-    });
+    // it('renders', () => {
+    //     expect(shallow(<WordGameApp game={[]}/>)).to.exist;
+    // });
 });
 
 
