@@ -21,8 +21,8 @@ const NumberHint = (props) => {
         </div>
     );
 };
-// NumberHint.propTypes = {
-//     guess: React.PropTypes.string,
-//     number: React.PropTypes.string,
-// };
+NumberHint.propTypes = {
+    guess: React.PropTypes.number,
+    comparedToAnswer: React.PropTypes.string,
+};
 export default NumberHint;

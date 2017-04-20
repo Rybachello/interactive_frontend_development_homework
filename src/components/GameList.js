@@ -1,6 +1,6 @@
 import React from 'react';
-import NumberGameApp from '../containers/NumberGameApp';
-import WordGameApp from '../containers/WordGameApp';
+import NumberGameApp from './NumberGameApp';
+import WordGameApp from './WordGameApp';
 const GameList = (props) => {
     const gameElements = props.games.map((game, idx) => {
         if (game.type === 'guess_number') {
@@ -27,7 +27,7 @@ GameList.propTypes = {
         id: React.PropTypes.string,
         type: React.PropTypes.string,
         status: React.PropTypes.string,
-        inFlight:React.PropTypes.object,
+        fetchState: React.PropTypes.object,
         moves: React.PropTypes.array
     })),
     onNumberSubmit: React.PropTypes.func.isRequired,

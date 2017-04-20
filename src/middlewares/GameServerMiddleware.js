@@ -8,12 +8,11 @@ import {
     postGuess
 } from '../actions/GameServerActions';
 
-//todo: why we need this??
 const ACTION_TYPE_TO_SERVER_ACTION = {
     [CREATE_GAME_POST_REQUESTED]: postCreateGame,
     [GUESS_POST_REQUESTED]: postGuess
 };
-//todo: fix here
+
 const gameServerMiddleware = (store) => (next) => (action) => {
     const serverAction = ACTION_TYPE_TO_SERVER_ACTION[action.type];
     if (serverAction) {

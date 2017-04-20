@@ -1,13 +1,13 @@
 import React from 'react';
-import WordHintList from '../components/WordHintList';
-import GuessWordForm from '../components/GuessWordForm';
+import WordHintList from './WordHintList';
+import GuessWordForm from './GuessWordForm';
 const WordGameApp = (props) => {
-    console.log(props);
     if (props.game.status === 'waiting_for_move') {
         return (
             <div className='guess_word'>
                 <h2>Word Guess Game</h2>
-                <GuessWordForm inFlight = {props.game.inFlight} onSubmit={(word) => props.onWordSubmit(word, props.game.id)}/>
+                <GuessWordForm fetchState={props.game.fetchState}
+                               onSubmit={(word) => props.onWordSubmit(word, props.game.id)}/>
                 <WordHintList moves={props.game.move}/>
             </div>
         );
@@ -24,10 +24,15 @@ const WordGameApp = (props) => {
 };
 WordGameApp.propTypes = {
     game: React.PropTypes.shape({
-        type: React.PropTypes.string,
         id: React.PropTypes.string,
-        moves: React.PropTypes.array
-    }).isRequired,
+        type: React.PropTypes.string,
+        move: React.PropTypes.array,
+        fetchState: React.PropTypes.shape({
+            inFlight: React.PropTypes.bool,
+            error: React.PropTypes.shape,
+        }),
+        status: React.PropTypes.string
+    }),
     onWordSubmit: React.PropTypes.func.isRequired
 };
 

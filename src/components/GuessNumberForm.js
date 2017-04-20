@@ -25,15 +25,14 @@ class GuessNumberForm extends Component {
     }
 
     render() {
-        if (this.props.inFlight.inFlight) {
+        if (this.props.fetchState.inFlight) {
             return (
                 <h2>Loading...</h2>
-            )
-        }
-        else {
+            );
+        } else {
             return (
                 <div className='guess-form'>
-                    <h4>{this.props.inFlight.error ? `${this.props.inFlight.error.error}` : ``}</h4>
+                    <h4>{this.props.fetchState.error ? `${this.props.fetchState.error.error}` : ``}</h4>
                     <font size='4'>Guess a number from 0 to 9</font>
                     <div>
                         <input type='text'
@@ -48,6 +47,13 @@ class GuessNumberForm extends Component {
     }
 }
 GuessNumberForm.propTypes = {
-    onSubmit: React.PropTypes.func.isRequired,
+    fetchState: React.PropTypes.shape({
+        inFlight: React.PropTypes.bool.isRequired,
+        error: React.PropTypes.shape({
+            id: React.PropTypes.string,
+            error: React.PropTypes.string,
+        }),
+    }),
+    onSubmit: React.PropTypes.func.isRequired
 };
 export default GuessNumberForm;

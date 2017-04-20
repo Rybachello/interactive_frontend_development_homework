@@ -31,6 +31,3 @@ export const guessPostSucceeded = createPayloadForwardingAction(GUESS_POST_SUCCE
 export const GUESS_POST_FAILED = 'GUESS_POST_FAILED';
 export const guessPostFailed = createPayloadForwardingAction(GUESS_POST_FAILED);
 
-
-
-

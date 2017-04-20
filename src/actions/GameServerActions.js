@@ -15,17 +15,17 @@ export const postCreateGame = ({type}) => (dispatch) => {
         SERVER_ADDRESS + '/games',
         'POST',
         {type},
-        ({id,type,status}) => dispatch(createGamePostSucceeded({id,type,status})),
+        ({id, type, status}) => dispatch(createGamePostSucceeded({id, type, status})),
         ({error}) => dispatch(createGamePostFailed({error}))
     );
 };
 
-export const postGuess = ({guess,id}) =>(dispatch) =>{
+export const postGuess = ({guess, id}) =>(dispatch) =>{
     jsonAjax(
         SERVER_ADDRESS +`/games/${id}/moves`,
         'POST',
         {guess},
-        ({move,game}) => dispatch(guessPostSucceeded({move, game})),
-        ({error}) => dispatch(guessPostFailed({error,id}))
-    )
+        ({move, game}) => dispatch(guessPostSucceeded({move, game})),
+        ({error}) => dispatch(guessPostFailed({error, id}))
+    );
 };

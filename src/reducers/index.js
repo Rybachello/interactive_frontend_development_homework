@@ -29,10 +29,10 @@ const GameReducer = (state = initialState, action) => {
                     id: action.payload.id,
                     type: action.payload.type,
                     move: [],
-                    inFlight: {inFlight: false},
+                    fetchState: {inFlight: false},
                     status: action.payload.status
                 })
-            }
+            };
         }
         case CREATE_GAME_POST_FAILED: {
             return {
@@ -49,14 +49,12 @@ const GameReducer = (state = initialState, action) => {
                     }
                     return {
                         ...game,
-                        inFlight: {inFlight: true}
-                    }
+                        fetchState: {inFlight: true}
+                    };
                 })
-            }
+            };
         }
         case GUESS_POST_SUCCEEDED: {
-            // console.log(action.payload);
-            // console.log(state);
             return {
                 ...state,
                 games: state.games.map((game) => {
@@ -67,10 +65,10 @@ const GameReducer = (state = initialState, action) => {
                         ...game,
                         move: game.move.concat(action.payload.move),
                         status: action.payload.game.status,
-                        inFlight: {inFlight: false}
-                    }
+                        fetchState: {inFlight: false}
+                    };
                 })
-            }
+            };
         }
         case GUESS_POST_FAILED: {
             return {
@@ -82,10 +80,10 @@ const GameReducer = (state = initialState, action) => {
                     }
                     return {
                         ...game,
-                        inFlight: {inFlight: false, error: action.payload}
-                    }
+                        fetchState: {inFlight: false, error: action.payload}
+                    };
                 })
-            }
+            };
         }
 
         default:

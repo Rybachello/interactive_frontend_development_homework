@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 
 const GameCreation = (props) => {
     if (props.inFlight) {
@@ -7,8 +7,7 @@ const GameCreation = (props) => {
                 <h2>Loading...</h2>
             </div>
         );
-    }
-    else {
+    } else {
         return (
             <div>
                 <h2>{props.error ? `${props.error}` : ``}</h2>
@@ -19,7 +18,7 @@ const GameCreation = (props) => {
                         onClick={() => props.createGame('guess_word')}>Create new Word game
                 </button>
             </div>
-        )
+        );
     }
 };
 
