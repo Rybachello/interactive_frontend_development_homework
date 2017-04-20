@@ -2,11 +2,12 @@ import React from 'react';
 import WordHintList from '../components/WordHintList';
 import GuessWordForm from '../components/GuessWordForm';
 const WordGameApp = (props) => {
+    console.log(props);
     if (props.game.status === 'waiting_for_move') {
         return (
             <div className='guess_word'>
                 <h2>Word Guess Game</h2>
-                <GuessWordForm onSubmit={(word) => props.onWordSubmit(word, props.game.id)}/>
+                <GuessWordForm inFlight = {props.game.inFlight} onSubmit={(word) => props.onWordSubmit(word, props.game.id)}/>
                 <WordHintList moves={props.game.move}/>
             </div>
         );

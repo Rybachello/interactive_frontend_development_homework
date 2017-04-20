@@ -1,9 +1,10 @@
 import React from 'react';
 import WordHint from './WordHint';
 const WordHintList = (props) => {
+    console.log(props);
     const hintElements = props.moves.map((move, idx) => {
         return (
-            <WordHint word={move.word} matches={move.matches} key={idx}/>
+            <WordHint guess={move.guess} letterMatches={move.letterMatches} key={idx}/>
         );
     });
     return (

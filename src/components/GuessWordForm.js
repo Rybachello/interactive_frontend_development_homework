@@ -22,8 +22,14 @@ class GuessWordForm extends Component {
     }
 
     render() {
+        if (this.props.inFlight.inFlight) {
+            return (
+                <h2>Loading...</h2>
+            )
+        }
         return (
             <div className='guess-form'>
+                <h4>{this.props.inFlight.error ? `${this.props.inFlight.error.error}` : ``}</h4>
                 <font size='4'>Guess a five letter word</font>
                 <br/>
                 <br/>

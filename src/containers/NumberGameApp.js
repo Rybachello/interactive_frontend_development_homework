@@ -23,14 +23,14 @@ const NumberGameApp = (props) => {
         );
     }
 };
- // NumberGameApp.propTypes = {
- //     game: React.PropTypes.shape({
- //         type: React.PropTypes.string,
- //         id: React.PropTypes.string,
- //         moves: React.PropTypes.array
- //     }).isRequired,
- //     onNumberSubmit: React.PropTypes.func.isRequired
- // };
+  NumberGameApp.propTypes = {
+      game:React.PropTypes.shape({
+         type: React.PropTypes.string,
+         id: React.PropTypes.string,
+         moves: React.PropTypes.array
+     }).isRequired,
+     onNumberSubmit: React.PropTypes.func.isRequired
+ };
 
 export default NumberGameApp;
 
