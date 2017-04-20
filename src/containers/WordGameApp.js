@@ -2,8 +2,6 @@ import React from 'react';
 import WordHintList from '../components/WordHintList';
 import GuessWordForm from '../components/GuessWordForm';
 const WordGameApp = (props) => {
-    console.log("word game");
-    console.log(props);
     if (props.game.status === 'waiting_for_move') {
         return (
             <div className='guess_word'>

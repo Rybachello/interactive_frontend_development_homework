@@ -27,8 +27,9 @@ GameList.propTypes = {
         id: React.PropTypes.string,
         type: React.PropTypes.string,
         status: React.PropTypes.string,
+        inFlight:React.PropTypes.object,
         moves: React.PropTypes.array
-    })).isRequired,
+    })),
     onNumberSubmit: React.PropTypes.func.isRequired,
     onWordSubmit: React.PropTypes.func.isRequired
 };

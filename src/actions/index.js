@@ -2,11 +2,7 @@ import {} from '../actions/GameServerActions';
 const createPayloadForwardingAction = (type) => (payload) =>
     ({type: type, payload: payload});
 
-
-let nextId = 1;
-
 export const CREATE_GAME_POST_REQUESTED = 'CREATE_GAME_POST_REQUESTED';
-
 export const createGamePostRequested = (type) => ({
     type: CREATE_GAME_POST_REQUESTED,
     payload: {
@@ -15,7 +11,6 @@ export const createGamePostRequested = (type) => ({
 });
 
 export const GUESS_POST_REQUESTED = 'GUESS_POST_REQUESTED';
-
 export const guessPostRequested = (guess, id) => ({
     type: GUESS_POST_REQUESTED,
     payload: {

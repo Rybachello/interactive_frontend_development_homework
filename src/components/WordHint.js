@@ -11,8 +11,8 @@ const WordHint = (props) => {
         </div>
     );
 };
-WordHint.propTypes = {
-    matches: React.PropTypes.array.isRequired,
-    word: React.PropTypes.string.isRequired,
-};
+// WordHint.propTypes = {
+//     matches: React.PropTypes.array.isRequired,
+//     word: React.PropTypes.string.isRequired,
+// };
 export default WordHint;

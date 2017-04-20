@@ -2,15 +2,15 @@ import React from 'react';
 import {EQ, GT, LT} from '../reducers/index';
 const NumberHint = (props) => {
     const getResult = () => {
-        switch (props.guess) {
+        switch (props.comparedToAnswer) {
             case EQ: {
-                return <span className='green'>{props.number}: was correct!</span>;
+                return <span className='green'>{props.guess}: was correct!</span>;
             }
             case LT: {
-                return <span className='red'>{props.number}: was lower than target</span>;
+                return <span className='red'>{props.guess}: was lower than target</span>;
             }
             case GT: {
-                return <span className='red'>{props.number}: was greater than target</span>;
+                return <span className='red'>{props.guess}: was greater than target</span>;
             }
         }
     };
@@ -21,8 +21,8 @@ const NumberHint = (props) => {
         </div>
     );
 };
-NumberHint.propTypes = {
-    guess: React.PropTypes.string,
-    number: React.PropTypes.string,
-};
+// NumberHint.propTypes = {
+//     guess: React.PropTypes.string,
+//     number: React.PropTypes.string,
+// };
 export default NumberHint;
