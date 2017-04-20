@@ -22,8 +22,14 @@ class GuessWordForm extends Component {
     }
 
     render() {
+        if (this.props.fetchState.inFlight) {
+            return (
+                <h2>Loading...</h2>
+            );
+        }
         return (
             <div className='guess-form'>
+                <h4>{this.props.fetchState.error ? `${this.props.fetchState.error.error}` : ``}</h4>
                 <font size='4'>Guess a five letter word</font>
                 <br/>
                 <br/>
@@ -37,6 +43,13 @@ class GuessWordForm extends Component {
     }
 }
 GuessWordForm.propTypes = {
+    fetchState: React.PropTypes.shape({
+        error: React.PropTypes.shape({
+            id: React.PropTypes.string,
+            error: React.PropTypes.string,
+        }),
+        inFlight: React.PropTypes.bool.isRequired
+    }),
     onSubmit: React.PropTypes.func.isRequired,
 };
 export default GuessWordForm;

@@ -1,52 +1,33 @@
-import {GAME_CREATION, NUMBER_GUESS, WORD_GUESS} from '../actions/actionType.js';
+import {} from '../actions/GameServerActions';
+const createPayloadForwardingAction = (type) => (payload) =>
+    ({type: type, payload: payload});
 
-const WORDS = ['paper', 'grill', 'basil', 'hinge', 'ruler'];
-const MIN_NUMBER = 0;
-const MAX_NUMBER = 9;
-let nextId = 1;
-
-export const createGame = (type) => {
-    if (type === 'number-game') {
-        return {
-            type: GAME_CREATION,
-            payload: {
-                type: type,
-                id: nextId++,
-                isGameOver: false,
-                target: Math.floor(Math.random() * (MAX_NUMBER - MIN_NUMBER + 1) + MIN_NUMBER),
-                moves: []
-            }
-        };
-    } else if (type === 'word-game') {
-        return {
-            type: GAME_CREATION,
-            payload: {
-                type: type,
-                id: nextId++,
-                isGameOver: false,
-                target: WORDS[Math.floor(Math.random() * WORDS.length)],
-                moves: []
-            }
-        };
+export const CREATE_GAME_POST_REQUESTED = 'CREATE_GAME_POST_REQUESTED';
+export const createGamePostRequested = (type) => ({
+    type: CREATE_GAME_POST_REQUESTED,
+    payload: {
+        type: type,
     }
-};
+});
 
-export const onNumberSubmit = (number, id) => {
-    return {
-        type: NUMBER_GUESS,
-        payload: {
-            id: id,
-            number: number
-        }
-    };
-};
+export const GUESS_POST_REQUESTED = 'GUESS_POST_REQUESTED';
+export const guessPostRequested = (guess, id) => ({
+    type: GUESS_POST_REQUESTED,
+    payload: {
+        guess: guess,
+        id: id
+    }
+});
 
-export const onWordSubmit = (word, id) => {
-    return {
-        type: WORD_GUESS,
-        payload: {
-            id: id,
-            word: word
-        }
-    };
-};
+export const CREATE_GAME_POST_SUCCEEDED = 'CREATE_GAME_POST_SUCCEEDED';
+export const createGamePostSucceeded = createPayloadForwardingAction(CREATE_GAME_POST_SUCCEEDED);
+
+export const CREATE_GAME_POST_FAILED = 'CREATE_GAME_POST_FAILED';
+export const createGamePostFailed = createPayloadForwardingAction(CREATE_GAME_POST_FAILED);
+
+export const GUESS_POST_SUCCEEDED = 'GUESS_POST_SUCCEEDED';
+export const guessPostSucceeded = createPayloadForwardingAction(GUESS_POST_SUCCEEDED);
+
+export const GUESS_POST_FAILED = 'GUESS_POST_FAILED';
+export const guessPostFailed = createPayloadForwardingAction(GUESS_POST_FAILED);
+

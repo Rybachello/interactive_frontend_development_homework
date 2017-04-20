@@ -1,7 +1,8 @@
 import React from 'react';
 const WordHint = (props) => {
-    const letters = props.word.split('').map((x, idx) => {
-        return <span key={idx} className={props.matches.indexOf(idx) >= 0 ? 'green' : 'red'}>{x}</span>;
+    const letters = props.guess.split('').map((x, idx) => {
+        return <span key={idx} className= {
+            props.letterMatches[idx] ? 'green' : 'red'}>{x}</span>;
     });
     return (
         <div className='word-hint'>
@@ -12,7 +13,7 @@ const WordHint = (props) => {
     );
 };
 WordHint.propTypes = {
-    matches: React.PropTypes.array.isRequired,
-    word: React.PropTypes.string.isRequired,
+    letterMatches: React.PropTypes.array.isRequired,
+    guess: React.PropTypes.string.isRequired,
 };
 export default WordHint;

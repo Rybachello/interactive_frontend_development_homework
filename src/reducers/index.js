@@ -1,61 +1,98 @@
-import {GAME_CREATION, NUMBER_GUESS, WORD_GUESS} from '../actions/actionType.js';
+import {
+    GUESS_POST_REQUESTED,
+    GUESS_POST_FAILED,
+    GUESS_POST_SUCCEEDED,
+    CREATE_GAME_POST_REQUESTED,
+    CREATE_GAME_POST_FAILED,
+    CREATE_GAME_POST_SUCCEEDED
 
-const initialState = [];
+} from '../actions/index';
 
-const GamesReducer = (state = initialState, action) => {
+const initialState = {
+    fetchState: {inFlight: false},
+    games: []
+};
+
+const GameReducer = (state = initialState, action) => {
     switch (action.type) {
-        case GAME_CREATION:
-            return state.concat(action.payload);
-        case NUMBER_GUESS:
-            return state.map((game) => {
+        case CREATE_GAME_POST_REQUESTED: {
+            return {
+                ...state,
+                fetchState: {inFlight: true}
+            };
+        }
+        case CREATE_GAME_POST_SUCCEEDED: {
+            return {
+                ...state,
+                fetchState: {inFlight: false},
+                games: state.games.concat({
+                    id: action.payload.id,
+                    type: action.payload.type,
+                    move: [],
+                    fetchState: {inFlight: false},
+                    status: action.payload.status
+                })
+            };
+        }
+        case CREATE_GAME_POST_FAILED: {
+            return {
+                ...state,
+                fetchState: {inFlight: false, error: action.payload.error},
+            };
+        }
+        case GUESS_POST_REQUESTED: {
+            return {
+                ...state,
+                games: state.games.map((game) => {
                     if (game.id != action.payload.id) {
                         return game;
                     }
-                    let newGuess = game.target > action.payload.number ? LT : GT;
-                    if (game.target == action.payload.number) {
-                        newGuess = EQ;
+                    return {
+                        ...game,
+                        fetchState: {inFlight: true}
+                    };
+                })
+            };
+        }
+        case GUESS_POST_SUCCEEDED: {
+            return {
+                ...state,
+                games: state.games.map((game) => {
+                    if (game.id != action.payload.game.id) {
+                        return game;
                     }
                     return {
                         ...game,
-                        isGameOver: game.target == action.payload.number,
-                        moves: game.moves.concat({
-                                guess: newGuess,
-                                number: action.payload.number
-                            }
-                        )
+                        move: game.move.concat(action.payload.move),
+                        status: action.payload.game.status,
+                        fetchState: {inFlight: false}
                     };
-                }
-            );
-        case WORD_GUESS:
-            return state.map((game) => {
-                if (game.id != action.payload.id) {
-                    return game;
-                }
-                let result = [];
-                let length = game.target.length >= action.payload.word.length ? game.target.length : action.word.length;
-                for (let i = 0; i < length; i++) {
-                    if (action.payload.word[i] === game.target[i]) {
-                        result.push(i);
+                })
+            };
+        }
+        case GUESS_POST_FAILED: {
+            return {
+                ...state,
+                games: state.games.map((game) => {
+                    console.log(action.payload.id);
+                    if (game.id != action.payload.id) {
+                        return game;
                     }
-                }
-                return {
-                    ...game,
-                    isGameOver: game.target == action.payload.word,
-                    moves: game.moves.concat({
-                            matches: result,
-                            word: action.payload.word
-                        }
-                    )
-                };
-            });
+                    return {
+                        ...game,
+                        fetchState: {inFlight: false, error: action.payload}
+                    };
+                })
+            };
+        }
+
         default:
             return state;
     }
 };
 
-
 export const LT = 'LT';
 export const GT = 'GT';
 export const EQ = 'EQ';
 
-export default GamesReducer;
+export default GameReducer;

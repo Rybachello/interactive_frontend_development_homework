@@ -3,7 +3,7 @@ import NumberHint from './NumberHint';
 const NumberHintList = (props) => {
     const hintElements = props.moves.map((move, idx) => {
         return (
-            <NumberHint guess={move.guess} number={move.number} key={idx}/>
+            <NumberHint comparedToAnswer = {move.comparedToAnswer} guess={move.guess} key={idx}/>
         );
     });
     return (
@@ -15,8 +15,8 @@ const NumberHintList = (props) => {
 NumberHintList.propTypes = {
     moves: React.PropTypes.arrayOf(
         React.PropTypes.shape({
-            guess: React.PropTypes.string.isRequired,
-            number: React.PropTypes.string.isRequired,
+            guess: React.PropTypes.number.isRequired,
+            comparedToAnswer: React.PropTypes.string.isRequired,
         }).isRequired
     )
 };

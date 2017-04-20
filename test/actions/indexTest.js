@@ -1,49 +1,81 @@
-import {createGame} from '../../src/actions/index';
+import {postCreateGame, postGuess} from '../../src/actions/gameServerActions';
+import {
+    CREATE_GAME_POST_REQUESTED,
+    CREATE_GAME_POST_SUCCEEDED,
+    CREATE_GAME_POST_FAILED,
+    GUESS_POST_FAILED,
+    GUESS_POST_REQUESTED,
+    GUESS_POST_SUCCEEDED
+} from '../../src/actions/index';
 describe('actions:', () => {
-    describe('game created', () => {
+    describe('create game post', () => {
+        let xhr;
+        let requests;
+        let dispatch;
 
-        it('has increasing game ID', () => {
-            const numberGameType = 'number-game';
-            const wordGameType = 'word-game';
-            const createdGame = [
-                createGame(numberGameType),
-                createGame(wordGameType)
-            ];
-            expect(createdGame[1].payload.id).to.eq(
-                createdGame[0].payload.id + 1
-            );
-        });
-        it('number game: has appropriate type ', () => {
-            const numberGameType = 'number-game';
-            const wordGameType = 'word-game';
-            const createdGame = [
-                createGame(numberGameType),
-                createGame(wordGameType)
-            ];
-            expect(createdGame[0].payload.type).to.eq(numberGameType);
-            expect(createdGame[1].payload.type).to.eq(wordGameType);
-        });
-        it('number game: isGameOver is false ', () => {
-            const numberGameType = 'number-game';
-            const createdGame = createGame(numberGameType);
+        beforeEach(() => {
+            global.XMLHttpRequest = xhr = sinon.useFakeXMLHttpRequest();
 
-            expect(createdGame.payload.isGameOver).to.be.false;
+            requests = [];
+            xhr.onCreate = (xhr) => requests.push(xhr);
+            dispatch = sinon.stub();
         });
-        it('word game: isGameOver is false ', () => {
-            const wordGameType = 'word-game';
-            const createdGame = createGame(wordGameType);
-            expect(createdGame.payload.isGameOver).to.be.false;
+
+        afterEach(() => {
+            xhr.restore();
         });
-        it('number game: generate target value', () => {
-            const numberGameType = 'number-game';
-            const createdGame = createGame(numberGameType);
-            expect(createdGame.payload.target).to.be.within(0, 9);
+
+        it('dispatches postCreateGame failed when xhr fails', () => {
+            postCreateGame('guess_number')(dispatch);
+
+            requests[0].respond(503, {}, JSON.stringify({error: 'error'}));
+            expect(dispatch).to.have.been.calledWith({
+                type: CREATE_GAME_POST_FAILED,
+                payload: {error: 'error'}
+            });
         });
-        it('word game: generate target value', () =>{
-            const words = ['paper', 'grill', 'basil', 'hinge', 'ruler'];
-            const wordGameType = 'word-game';
-            const createdGame = createGame(wordGameType);
-            expect(words).to.include(createdGame.payload.target);
+
+        it('dispatches postCreateGame when xhr succeeds', () => {
+            postCreateGame('guess_word')(dispatch);
+
+            requests[0].respond(201, {}, JSON.stringify({id: 'asd2ef3-fas3tgs', type: 'guess_word', status: 'finished'}));
+            expect(dispatch).to.have.been.calledWith({
+                type: CREATE_GAME_POST_SUCCEEDED,
+                payload: {
+                    id: 'asd2ef3-fas3tgs',
+                    type: 'guess_word',
+                    status: 'finished'
+                }
+            });
         });
+    });
+
+    describe('guess word/number post ', () => {
+        let xhr;
+        let requests;
+        let dispatch;
+
+        beforeEach(() => {
+            global.XMLHttpRequest = xhr = sinon.useFakeXMLHttpRequest();
+
+            requests = [];
+            xhr.onCreate = (xhr) => requests.push(xhr);
+            dispatch = sinon.stub();
+        });
+
+        afterEach(() => {
+            xhr.restore();
+        });
+
+        it('dispatches postGuess failed when xhr fails', () => {
+            postGuess({guess: '4', id: 'a23rf-4qwef'})(dispatch);
+
+            requests[0].respond(502, {}, JSON.stringify({error: 'error'}));
+            expect(dispatch).to.have.been.calledWith({
+                type: GUESS_POST_FAILED,
+                payload: {error: 'error', id: 'a23rf-4qwef'}
+            });
+        });
+
     });
 });

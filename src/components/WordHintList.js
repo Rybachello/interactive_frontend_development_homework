@@ -3,7 +3,7 @@ import WordHint from './WordHint';
 const WordHintList = (props) => {
     const hintElements = props.moves.map((move, idx) => {
         return (
-            <WordHint word={move.word} matches={move.matches} key={idx}/>
+            <WordHint guess={move.guess} letterMatches={move.letterMatches} key={idx}/>
         );
     });
     return (
@@ -14,8 +14,8 @@ const WordHintList = (props) => {
 };
 WordHintList.propTypes = {
     moves: React.PropTypes.arrayOf(React.PropTypes.shape({
-        word: React.PropTypes.string.isRequired,
-        matches: React.PropTypes.array.isRequired,
+        guess: React.PropTypes.string.isRequired,
+        letterMatches: React.PropTypes.array.isRequired,
     })).isRequired
 };
 export default WordHintList;
