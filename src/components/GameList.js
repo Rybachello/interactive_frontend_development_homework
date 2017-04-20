@@ -30,7 +30,7 @@ GameList.propTypes = {
         fetchState: React.PropTypes.object,
         moves: React.PropTypes.array
     })),
-    onNumberSubmit: React.PropTypes.func.isRequired,
-    onWordSubmit: React.PropTypes.func.isRequired
+    onNumberSubmit: React.PropTypes.func,
+    onWordSubmit: React.PropTypes.func
 };
 export default GameList;

@@ -10,7 +10,7 @@ describe('NumberHint', () => {
     });
     it('renders contained guess text', () => {
         expect(shallow(
-            <NumberHint comparedToAnswer='LT' guess='3'/>
+            <NumberHint comparedToAnswer='LT' guess= '3'/>
         )).to.include.text('3: was lower than target');
     });
     it('number hit element is with red color',() => {

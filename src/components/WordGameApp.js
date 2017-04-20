@@ -33,7 +33,7 @@ WordGameApp.propTypes = {
         }),
         status: React.PropTypes.string
     }),
-    onWordSubmit: React.PropTypes.func.isRequired
+    onWordSubmit: React.PropTypes.func
 };
 
 export default WordGameApp;

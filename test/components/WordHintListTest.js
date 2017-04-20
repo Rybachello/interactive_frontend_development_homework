@@ -17,8 +17,8 @@ describe('WordHintList', () => {
 
     it('renders WordHint component for each word', () => {
         const moves = [
-            {word: 'test1', matches: []},
-            {word: 'test2', matches: []}
+            {guess: 'test1', letterMatches: []},
+            {guess: 'test2', letterMatches: []}
         ];
         const wordHintList = shallow(<WordHintList moves={moves}/>);
         expect(wordHintList).to.have.exactly(2).descendants(WordHint);

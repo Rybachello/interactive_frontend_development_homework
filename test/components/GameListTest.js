@@ -11,7 +11,7 @@ describe('GameList', () => {
         )).to.exist;
     })
     it('renders number game when game type is number-game', () => {
-        const gameList = shallow(<GameList games={[{type:'guess_number'}]}/>);
+        const gameList = shallow(<GameList games={[{type:'guess_number'}] }/>);
         expect(gameList).to.contain.descendants(NumberGameApp);
     });
     it('renders word game when game type is word-game', () => {

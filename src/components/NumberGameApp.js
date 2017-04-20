@@ -34,7 +34,7 @@ NumberGameApp.propTypes = {
         }),
         status: React.PropTypes.string
     }),
-    onNumberSubmit: React.PropTypes.func.isRequired
+    onNumberSubmit: React.PropTypes.func
 };
 
 export default NumberGameApp;
