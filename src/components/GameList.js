@@ -2,13 +2,13 @@ import React from 'react';
 import NumberGameApp from '../containers/NumberGameApp';
 import WordGameApp from '../containers/WordGameApp';
 const GameList = (props) => {
-    const gameElements = props.gameList.map((game, idx) => {
-        if (game.type === 'number-game') {
+    const gameElements = props.games.map((game, idx) => {
+        if (game.type === 'guess_number') {
             return (
                 <NumberGameApp game={game} onNumberSubmit={props.onNumberSubmit} key={idx}>
                 </NumberGameApp>
             );
-        } else if (game.type === 'word-game') {
+        } else if (game.type === 'guess_word') {
             return (
                 <WordGameApp game={game} onWordSubmit={props.onWordSubmit} key={idx}>
                 </WordGameApp>
@@ -22,12 +22,14 @@ const GameList = (props) => {
         </div>
     );
 };
- GameList.propTypes = {
-    gameList: React.PropTypes.arrayOf(React.PropTypes.shape({
+GameList.propTypes = {
+    games: React.PropTypes.arrayOf(React.PropTypes.shape({
+        id: React.PropTypes.string,
         type: React.PropTypes.string,
-        id: React.PropTypes.number,
-        isGameOver: React.PropTypes.bool,
+        status: React.PropTypes.string,
         moves: React.PropTypes.array
-    }))
+    })).isRequired,
+    onNumberSubmit: React.PropTypes.func.isRequired,
+    onWordSubmit: React.PropTypes.func.isRequired
 };
 export default GameList;

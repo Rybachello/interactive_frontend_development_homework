@@ -3,34 +3,33 @@ import GuessNumberForm from '../components/GuessNumberForm';
 import NumberHintList from '../components/NumberHintList';
 
 const NumberGameApp = (props) => {
-    if (!props.game.isGameOver) {
+    if (props.game.status === 'waiting_for_move') {
         return (
-            <div className='number-game'>
+            <div className='guess_number'>
                 <h2>Number Guess Game</h2>
                 <GuessNumberForm onSubmit={(number) => props.onNumberSubmit(number, props.game.id)}/>
-                <NumberHintList moves={props.game.moves}/>
+                <NumberHintList moves={props.game.move}/>
             </div>
         );
-    } else {
+    }
+    if (props.game.status === 'finished') {
         return (
-            <div className='number-game'>
+            <div className='guess_number'>
                 <h2>Number Guess Game</h2>
                 <font size='4'>You win</font>
-                <NumberHintList moves={props.game.moves}/>
+                <NumberHintList moves={props.game.move}/>
             </div>
         );
     }
 };
-NumberGameApp.propTypes = {
-    game: React.PropTypes.shape({
-        type: React.PropTypes.string,
-        id: React.PropTypes.number,
-        isGameOver: React.PropTypes.bool,
-        target: React.PropTypes.number,
-        moves: React.PropTypes.array
-    }).isRequired,
-    onNumberSubmit: React.PropTypes.func.isRequired
-};
+ NumberGameApp.propTypes = {
+     game: React.PropTypes.shape({
+         type: React.PropTypes.string,
+         id: React.PropTypes.string,
+         moves: React.PropTypes.array
+     }).isRequired,
+     onNumberSubmit: React.PropTypes.func.isRequired
+ };
 
 export default NumberGameApp;
 

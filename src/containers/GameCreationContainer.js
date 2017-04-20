@@ -1,9 +1,12 @@
 import {connect} from 'react-redux';
-import {createGame} from '../actions';
+import {createGamePostRequested} from '../actions';
 import GameCreation from '../components/GameCreation';
 
 const mapDispatchToProps = (dispatch) => ({
-    createGame: (type) => dispatch(createGame(type))
+    createGame: (type) => dispatch(createGamePostRequested(type))
 });
-
-export default connect(undefined, mapDispatchToProps)(GameCreation);
+const mapStateToProps = (state) => ({
+   inFlight: state.fetchState.inFlight,
+   error: state.fetchState.error
+});
+export default connect(mapStateToProps, mapDispatchToProps)(GameCreation);
