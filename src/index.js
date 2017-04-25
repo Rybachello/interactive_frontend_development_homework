@@ -4,7 +4,7 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import gameServerMiddleware from './middlewares/GameServerMiddleware';
-import reducer from './reducers';
+import reducer from './reducers/index';
 import App from './containers/App';
 
 const composeStoreEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
