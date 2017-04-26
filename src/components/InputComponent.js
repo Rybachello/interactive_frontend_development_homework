@@ -26,7 +26,7 @@ class InputComponent extends Component {
       case 'connected':
         return (
           <div>
-            <button className="disconnect-name-from"
+            <button className='connect-button'
                     onClick={() => {
                       this.props.onDisconnectClick()
                       this.setState({name: ''})
@@ -37,7 +37,7 @@ class InputComponent extends Component {
       case 'disconnected':
         if (this.props.connection.disconnectReason) {
           return (
-            <div className='connect-name-form'>
+            <div className='disconnect-name-form'>
               <h4>Player name is already taken. Try a different name</h4>
               <div>
                 <input type='text'
@@ -46,7 +46,7 @@ class InputComponent extends Component {
                        onChange={this.handleNameChange.bind(this)}
                 />
               </div>
-              <button className="connect-player-button"
+              <button className='connect-button'
                       onClick={() => {
                         this.props.onConnectClick(this.state.name)
                         this.setState({name: ''})
@@ -65,7 +65,7 @@ class InputComponent extends Component {
                        onChange={this.handleNameChange.bind(this)}
                 />
               </div>
-              <button className="connect-player-button"
+              <button className='connect-button'
                       onClick={() => {
                         this.props.onConnectClick(this.state.name)
                         this.setState({name: ''})

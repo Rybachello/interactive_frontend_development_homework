@@ -21,3 +21,7 @@ body {
     display: flex;
     flex-direction: column-reverse;
 }
+.connect-button{
+    justify-content: center;
+    display: flex;
+}
