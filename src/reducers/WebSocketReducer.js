@@ -3,7 +3,7 @@ import {
   CONNECTION_PLAYER_SUCCEEDED,
   CONNECTION_PLAYER_FAILED,
   DISCONNECTION_PLAYER_REQUESTED,
-  MESSAGE_RECIEVED,
+  PLAYER_ID_RECIEVED,
   PLAYERS_LIST_RECIEVED
 
 } from '../actions/index'
@@ -11,10 +11,7 @@ import {
 const initialState = {
   status: 'disconnected',
   disconnectReason: null,
-  player: {
-    name: 'noname',
-    playerId: '0'
-  },
+  playerId: '0',
   players: []
 }
 
@@ -29,14 +26,14 @@ const WebSocketReducer = (state = initialState, action) => {
     //todo: finish here
     case CONNECTION_PLAYER_SUCCEEDED: {
       console.log('CONNECTION_PLAYER_SUCCEEDED')
-      console.log(action.payload)
+      console.log(action)
       return {
         ...state,
         status: 'connected',
-        player: {
-          name: action.payload.name,
-          id: action.payload.id
-        }
+        // player: {
+        //   name: action.payload.name,
+        //   id: action.payload.id
+        // }
       }
     }
 
@@ -49,6 +46,12 @@ const WebSocketReducer = (state = initialState, action) => {
         ...state,
         status: 'disconnected',
         disconnectReason: action.payload.reason
+      }
+    }
+    case PLAYER_ID_RECIEVED:{
+      return {
+        ...state,
+        playerId: action.payload.playerId
       }
     }
     case

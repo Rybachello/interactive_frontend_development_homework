@@ -55,6 +55,8 @@ export const playersListRecieved = (players) => ({
     players: players
   }
 })
+export const PLAYER_ID_RECIEVED = 'PLAYER_ID_RECIEVED'
+export const playerIdRecieved = createPayloadForwardingAction(PLAYER_ID_RECIEVED)
 
 //todo:complete here
 export const DISCONNECTION_PLAYER_REQUESTED = 'DISCONNECTION_PLAYER_REQUESTED'

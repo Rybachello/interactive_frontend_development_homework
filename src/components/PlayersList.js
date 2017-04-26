@@ -7,7 +7,7 @@ const PlayerList = (props) => {
     )
   }
   const players = props.players.map((player, idx) => {
-    return <p key={idx}>{player.id === props.player.id ? player.name + '(you)' : player.name }</p>
+    return <p key={idx}>{player.id === props.playerId ? player.name + '(you)' : player.name }</p>
   })
   return (
     <div className='player-list'>
