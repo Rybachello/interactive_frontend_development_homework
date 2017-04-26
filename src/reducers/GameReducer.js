@@ -85,7 +85,6 @@ const GameReducer = (state = initialState, action) => {
         })
       }
     }
-
     default:
       return state
   }

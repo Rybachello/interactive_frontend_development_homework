@@ -58,16 +58,11 @@ export const playersListRecieved = (players) => ({
 export const PLAYER_ID_RECIEVED = 'PLAYER_ID_RECIEVED'
 export const playerIdRecieved = createPayloadForwardingAction(PLAYER_ID_RECIEVED)
 
-//todo:complete here
 export const DISCONNECTION_PLAYER_REQUESTED = 'DISCONNECTION_PLAYER_REQUESTED'
 export const disconnectPlayerRequested = () => ({
-  type: CONNECTION_PLAYER_REQUESTED,
-  payload: {
-    //todo: name: name
-  }
+  type: DISCONNECTION_PLAYER_REQUESTED,
+  payload: {}
 })
 
 export const DISCONNECTION_PLAYER_SUCCEEDED = 'DISCONNECTION_SUCCEEDED'
 export const disconnectPlayerSucceeded = createPayloadForwardingAction(DISCONNECTION_PLAYER_SUCCEEDED)
-export const DISCONNECTION_PLAYER_FAILED = 'DISCONNECTION_FAILED'
-export const disconnectPlayerFailed = createPayloadForwardingAction(DISCONNECTION_PLAYER_FAILED)

@@ -4,6 +4,7 @@ import {
   connectPlayerSucceeded,
   playersListRecieved,
   messageRecieved,
+  disconnectPlayerSucceeded,
   playerIdRecieved,
 } from './index'
 import { connect } from '../WebSocket'
@@ -15,7 +16,7 @@ export const connectPlayer = ({name}) => (dispatch) => {
       dispatch(connectPlayerSucceeded())
     },
     onClose: ({reason}) => {
-      dispatch(connectPlayerFailed({reason}))
+      dispatch(disconnectPlayerSucceeded({reason}))
     },
     onMessage: ({eventName, payload}) => {
       dispatch(messageRecieved({eventName, payload}))
@@ -29,6 +30,6 @@ export const connectPlayer = ({name}) => (dispatch) => {
     parameters: {playerName: name}
   })
 }
-export const disconnectPlayer = ({type}) => (dispatch) => {
+export const disconnectPlayer = () => () => {
   webSocketConnection.close()
 }

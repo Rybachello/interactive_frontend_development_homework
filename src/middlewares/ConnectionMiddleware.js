@@ -1,13 +1,16 @@
 import {
-  CONNECTION_PLAYER_REQUESTED
+  CONNECTION_PLAYER_REQUESTED,
+  DISCONNECTION_PLAYER_REQUESTED
 } from '../actions/index'
 
 import {
-  connectPlayer
+  connectPlayer,
+  disconnectPlayer
 } from '../actions/WebSocketActions'
 
 const ACTION_TYPE_TO_SERVER_ACTION = {
   [CONNECTION_PLAYER_REQUESTED]: connectPlayer,
+  [DISCONNECTION_PLAYER_REQUESTED]: disconnectPlayer
 }
 
 const connectingMiddleware = (store) => (next) => (action) => {
