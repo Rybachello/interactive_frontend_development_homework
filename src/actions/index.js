@@ -42,9 +42,6 @@ export const connectPlayerRequested = (name) => ({
 export const CONNECTION_PLAYER_SUCCEEDED = 'CONNECTION_SUCCEEDED'
 export const connectPlayerSucceeded = createPayloadForwardingAction(CONNECTION_PLAYER_SUCCEEDED)
 
-export const CONNECTION_PLAYER_FAILED = 'CONNECTION_FAILED'
-export const connectPlayerFailed = createPayloadForwardingAction(CONNECTION_PLAYER_SUCCEEDED)
-
 export const MESSAGE_RECIEVED = 'MESSAGE_RECIEVED'
 export const messageRecieved = createPayloadForwardingAction(MESSAGE_RECIEVED)
 

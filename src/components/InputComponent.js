@@ -30,27 +30,51 @@ class InputComponent extends Component {
             <button className="disconnect-name-from"
                     onClick={() => {
                       this.props.onDisconnectClick()
-                      this.setState({name:''})
+                      this.setState({name: ''})
                     }}>Disconnect
             </button>
           </div>
         )
       case 'disconnected':
-        return (
-          <div className='connect-name-form'>
-            <h4>{this.props.connection.disconnectReason ? `${this.props.connection.disconnectReason}` : ``}</h4>
-            <div>
-              <input type='text'
-                     placeholder='Enter name'
-                     value={this.state.name}
-                     onChange={this.handleNameChange.bind(this)}
-              />
+        if (this.props.connection.disconnectReason) {
+          return (
+            <div className='connect-name-form'>
+              <h4>Player name is already taken. Try a different name</h4>
+              <div>
+                <input type='text'
+                       placeholder='Enter name'
+                       value={this.state.name}
+                       onChange={this.handleNameChange.bind(this)}
+                />
+              </div>
+              <button className="connect-player-button"
+                      onClick={() => {
+                        this.props.onConnectClick(this.state.name)
+                        this.setState({name: ''})
+                      }}>Connect
+              </button>
             </div>
-            <button className="connect-player-button"
-                    onClick={() => this.props.onConnectClick(this.state.name)}>Connect
-            </button>
-          </div>
-        )
+          )
+        } else {
+
+          return (
+            <div className='connect-name-form'>
+              <div>
+                <input type='text'
+                       placeholder='Enter name'
+                       value={this.state.name}
+                       onChange={this.handleNameChange.bind(this)}
+                />
+              </div>
+              <button className="connect-player-button"
+                      onClick={() => {
+                        this.props.onConnectClick(this.state.name)
+                        this.setState({name: ''})
+                      }}>Connect
+              </button>
+            </div>
+          )
+        }
     }
   };
 }
