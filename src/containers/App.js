@@ -2,7 +2,7 @@ import React from 'react';
 import GameContainer from './GameContainer';
 import GameCreationContainer from './GameCreationContainer';
 import GameLobbyContainer from './GameLobbyContainer';
-import PlayerListContainer from './PlayerListContainer'
+import PlayerListContainer from './PlayerListContainer';
 
 const App = () => {
     return (
