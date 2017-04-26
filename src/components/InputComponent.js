@@ -8,7 +8,6 @@ class InputComponent extends Component {
       name: ''
     }
     this.setState = this.setState.bind(this)
-    console.log(props)
   }
 
   handleNameChange (event) {

@@ -3,7 +3,6 @@ import Header from '../components/Header'
 import InputComponent from '../components/InputComponent'
 
 const GameLobby = (props) => {
-  console.log(props)
   return (
     <div>
       <Header text='Game Lobby'/>

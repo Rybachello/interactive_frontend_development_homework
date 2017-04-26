@@ -3,16 +3,15 @@ import {
   CONNECTION_PLAYER_SUCCEEDED,
   DISCONNECTION_PLAYER_SUCCEEDED,
   PLAYER_ID_RECIEVED,
-  PLAYERS_LIST_RECIEVED
-
-} from '../actions/index'
+  PLAYERS_LIST_RECIEVED,
+} from '../actions/index';
 
 const initialState = {
   status: 'disconnected',
   disconnectReason: null,
   playerId: '0',
   players: []
-}
+};
 
 const WebSocketReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -20,28 +19,26 @@ const WebSocketReducer = (state = initialState, action) => {
       return {
         ...state,
         status: 'connecting'
-      }
+      };
     }
     case CONNECTION_PLAYER_SUCCEEDED: {
       return {
         ...state,
         status: 'connected'
-      }
+      };
     }
-
     case PLAYER_ID_RECIEVED: {
       return {
         ...state,
         playerId: action.payload.playerId
-      }
+      };
     }
     case
     PLAYERS_LIST_RECIEVED: {
       return {
         ...state,
         players: action.payload.players
-
-      }
+      };
     }
     case
     DISCONNECTION_PLAYER_SUCCEEDED: {
@@ -49,15 +46,15 @@ const WebSocketReducer = (state = initialState, action) => {
         return {
           ...state,
           status: 'disconnected',
-          disconnectReason:action.payload.reason
-        }
+          disconnectReason: action.payload.reason
+        };
       }
-      return initialState
+      return initialState;
     }
     default: {
-      return state
+      return state;
     }
   }
-}
+};
 
-export default WebSocketReducer
+export default WebSocketReducer;
