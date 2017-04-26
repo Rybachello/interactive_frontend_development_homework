@@ -7,7 +7,8 @@ const mapDispatchToProps = (dispatch) => ({
     onWordSubmit: (word, id) => dispatch(guessPostRequested(word, id))
 });
 const mapStateToProps = (state) => ({
-    games: state.games
+    games: state.games.games,
+    status: state.connection.status
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GameList);

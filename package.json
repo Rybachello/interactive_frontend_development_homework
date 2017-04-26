@@ -37,7 +37,9 @@
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
     "redux": "^3.6.0",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "uuid": "^3.0.1",
+    "websocket": "^1.0.24"
   },
   "scripts": {
     "build": "webpack --config webpack.config.js",
@@ -45,7 +47,6 @@
     "test-watch": "mocha --watch",
     "start": "webpack-dev-server --open --config webpack.config.js",
     "start-server": "game_lobby_server --delay=1000 --failure-percentage=30",
-    "start-web-server": "node server.js",
     "lint": "eslint src/",
     "test-lint": "eslint src/test",
     "test-debug": "mocha --inspect --debug-brk",
