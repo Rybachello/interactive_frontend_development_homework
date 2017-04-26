@@ -1,35 +1,33 @@
 import {
-  connectPlayerFailed,
-  connectPlayerRequested,
   connectPlayerSucceeded,
   playersListRecieved,
   messageRecieved,
   disconnectPlayerSucceeded,
   playerIdRecieved,
-} from './index'
-import { connect } from '../WebSocket'
+} from './index';
+import {connect} from '../WebSocket';
 
-let webSocketConnection = null
+let webSocketConnection = null;
 export const connectPlayer = ({name}) => (dispatch) => {
   webSocketConnection = connect({
     onOpen: () => {
-      dispatch(connectPlayerSucceeded())
+      dispatch(connectPlayerSucceeded());
     },
     onClose: ({reason}) => {
-      dispatch(disconnectPlayerSucceeded({reason}))
+      dispatch(disconnectPlayerSucceeded({reason}));
     },
     onMessage: ({eventName, payload}) => {
-      dispatch(messageRecieved({eventName, payload}))
+      dispatch(messageRecieved({eventName, payload}));
       if (eventName === 'connection:accepted') {
-        dispatch(playerIdRecieved(payload))
+        dispatch(playerIdRecieved(payload));
       }
       if (eventName === 'online-players') {
-        dispatch(playersListRecieved(payload))
+        dispatch(playersListRecieved(payload));
       }
     },
     parameters: {playerName: name}
-  })
-}
+  });
+};
 export const disconnectPlayer = () => () => {
-  webSocketConnection.close()
-}
+  webSocketConnection.close();
+};

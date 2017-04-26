@@ -14,6 +14,7 @@
     "chai": "^3.5.0",
     "chai-enzyme": "^0.6.1",
     "enzyme": "^2.7.1",
+    "prop-types": "15.5.8",
     "eslint": "3.8.1",
     "eslint-config-google": "^0.7.1",
     "eslint-plugin-import": "2.0.1",
@@ -47,7 +48,7 @@
     "test-watch": "mocha --watch",
     "start": "webpack-dev-server --open --config webpack.config.js",
     "start-server": "game_lobby_server --delay=1000 --failure-percentage=30",
-    "lint": "eslint src/",
+    "lint": "eslint src/actions/",
     "test-lint": "eslint src/test",
     "test-debug": "mocha --inspect --debug-brk",
     "pretest": "npm run lint"
