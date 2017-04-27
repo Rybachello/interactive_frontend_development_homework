@@ -37,8 +37,7 @@ export const connectPlayerRequested = (name) => ({
 });
 export const CONNECTION_PLAYER_SUCCEEDED = 'CONNECTION_SUCCEEDED';
 export const connectPlayerSucceeded = createPayloadForwardingAction(CONNECTION_PLAYER_SUCCEEDED);
-export const MESSAGE_RECIEVED = 'MESSAGE_RECIEVED';
-export const messageRecieved = createPayloadForwardingAction(MESSAGE_RECIEVED);
+
 export const PLAYERS_LIST_RECIEVED = 'PLAYERS_LIST_RECIEVED';
 export const playersListRecieved = (players) => ({
   type: PLAYERS_LIST_RECIEVED,

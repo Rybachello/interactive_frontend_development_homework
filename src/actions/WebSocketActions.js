@@ -1,9 +1,8 @@
 import {
   connectPlayerSucceeded,
   playersListRecieved,
-  messageRecieved,
   disconnectPlayerSucceeded,
-  playerIdRecieved,
+  playerIdRecieved
 } from './index';
 import {connect} from '../WebSocket';
 
@@ -17,7 +16,6 @@ export const connectPlayer = ({name}) => (dispatch) => {
       dispatch(disconnectPlayerSucceeded({reason}));
     },
     onMessage: ({eventName, payload}) => {
-      dispatch(messageRecieved({eventName, payload}));
       if (eventName === 'connection:accepted') {
         dispatch(playerIdRecieved(payload));
       }
