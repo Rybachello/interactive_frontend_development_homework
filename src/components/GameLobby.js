@@ -1,19 +1,31 @@
-import React from 'react'
-import Header from '../components/Header'
-import InputComponent from '../components/InputComponent'
+import React from 'react';
+import PropTypes from 'prop-types';
+
+import Header from '../components/Header';
+import LoggingComponent from '../components/LoggingComponent';
 
 const GameLobby = (props) => {
+  console.log(props);
   return (
     <div>
       <Header text='Game Lobby'/>
-      <InputComponent connection={props.connection}
+      <LoggingComponent connection={props.connection}
                       onConnectClick = {props.onConnectClick}
                       onDisconnectClick = {props.onDisconnectClick}/>
     </div>
-  )
-}
+  );
+};
 
-//todo: add prop types
+GameLobby.propTypes= {
+  connection: PropTypes.shape({
+    disconnectReason: PropTypes.string,
+    playerId:PropTypes.string,
+    players: PropTypes.array,
+    status: PropTypes.string.isRequired
+  }),
+  onConnectClick: PropTypes.func.isRequired,
+  onDisconnectClick: PropTypes.func.isRequired
+};
 
-export default GameLobby
+export default GameLobby;
 
