@@ -33,7 +33,7 @@ NumberGameApp.propTypes = {
     fetchState: PropTypes.shape({
       inFlight: PropTypes.bool,
       error: PropTypes.string,
-    }).isRequired,
+    })
   }).isRequired,
   onNumberSubmit: PropTypes.func,
 };
