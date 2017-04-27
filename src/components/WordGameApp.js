@@ -27,7 +27,7 @@ const WordGameApp = (props) => {
 WordGameApp.propTypes = {
   game: PropTypes.shape({
     status: PropTypes.string,
-    moves: PropTypes.array,
+    move: PropTypes.array,
     id: PropTypes.string,
     type: PropTypes.string,
     fetchState: PropTypes.shape({
