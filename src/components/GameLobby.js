@@ -19,7 +19,7 @@ const GameLobby = (props) => {
 GameLobby.propTypes= {
   connection: PropTypes.shape({
     disconnectReason: PropTypes.string,
-    playerId:PropTypes.string,
+    playerId: PropTypes.string,
     players: PropTypes.array,
     status: PropTypes.string.isRequired
   }),

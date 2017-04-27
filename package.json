@@ -48,7 +48,7 @@
     "test-watch": "mocha --watch",
     "start": "webpack-dev-server --open --config webpack.config.js",
     "start-server": "game_lobby_server --delay=1000 --failure-percentage=30",
-    "lint": "eslint src/components/",
+    "lint": "eslint src/components/NumberGameApp.js",
     "test-lint": "eslint src/test",
     "test-debug": "mocha --inspect --debug-brk",
     "pretest": "npm run lint"
