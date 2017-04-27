@@ -24,7 +24,7 @@ const NumberGameApp = (props) => {
   }
 };
 NumberGameApp.propTypes = {
-    game: PropTypes.shape({
+    game: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.string,
         type: PropTypes.string,
         move: PropTypes.array,
@@ -33,7 +33,7 @@ NumberGameApp.propTypes = {
             error: PropTypes.shape,
         }),
         status: PropTypes.string.isRequired
-    }),
+    })),
     onNumberSubmit: PropTypes.func
 };
 export default NumberGameApp;

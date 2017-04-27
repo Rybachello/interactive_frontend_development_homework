@@ -5,7 +5,6 @@ import Header from '../components/Header';
 import LoggingComponent from '../components/LoggingComponent';
 
 const GameLobby = (props) => {
-  console.log(props);
   return (
     <div>
       <Header text='Game Lobby'/>
