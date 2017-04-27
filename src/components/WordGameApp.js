@@ -26,16 +26,16 @@ const WordGameApp = (props) => {
 };
 WordGameApp.propTypes = {
   game: PropTypes.shape({
+    status: PropTypes.string,
+    moves: PropTypes.array,
     id: PropTypes.string,
     type: PropTypes.string,
-    move: PropTypes.array,
     fetchState: PropTypes.shape({
       inFlight: PropTypes.bool,
-      error: PropTypes.shape,
-    }),
-    status: PropTypes.string,
-  }),
-  onWordSubmit: PropTypes.func.isRequired,
+      error: PropTypes.string
+    }).isRequired
+  }).isRequired,
+  onWordSubmit: PropTypes.func
 };
 
 export default WordGameApp;
