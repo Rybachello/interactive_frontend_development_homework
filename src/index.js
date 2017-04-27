@@ -4,24 +4,27 @@ import {Provider} from 'react-redux';
 import {createStore, applyMiddleware, compose} from 'redux';
 import thunk from 'redux-thunk';
 import gameServerMiddleware from './middlewares/GameServerMiddleware';
-import reducer from './reducers';
+import connectionMiddleware from './middlewares/ConnectionMiddleware';
+import reducer from './reducers/index';
 import App from './containers/App';
 
-const composeStoreEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeStoreEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
+    compose;
 
 let store = createStore(
     reducer,
     composeStoreEnhancers(
         applyMiddleware(
             thunk,
-            gameServerMiddleware
-        )
-    )
+            gameServerMiddleware,
+            connectionMiddleware,
+        ),
+    ),
 );
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+      <App />
     </Provider>,
-    document.getElementById('root')
+    document.getElementById('root'),
 );

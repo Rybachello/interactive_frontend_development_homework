@@ -6,7 +6,8 @@ const mapDispatchToProps = (dispatch) => ({
     createGame: (type) => dispatch(createGamePostRequested(type))
 });
 const mapStateToProps = (state) => ({
-   inFlight: state.fetchState.inFlight,
-   error: state.fetchState.error
+    inFlight: state.games.fetchState.inFlight,
+    error: state.games.fetchState.error,
+    status: state.connection.status
 });
 export default connect(mapStateToProps, mapDispatchToProps)(GameCreation);

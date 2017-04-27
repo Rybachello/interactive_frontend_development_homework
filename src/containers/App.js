@@ -1,11 +1,14 @@
 import React from 'react';
-import GameContainer from '../containers/GameContainer';
-import GameCreationContainer from '../containers/GameCreationContainer';
+import GameContainer from './GameContainer';
+import GameCreationContainer from './GameCreationContainer';
+import GameLobbyContainer from './GameLobbyContainer';
+import PlayerListContainer from './PlayerListContainer';
 
 const App = () => {
     return (
         <div>
-            <h1>Game Lobby</h1>
+            <GameLobbyContainer/>
+            <PlayerListContainer/>
             <GameCreationContainer/>
             <GameContainer/>
         </div>

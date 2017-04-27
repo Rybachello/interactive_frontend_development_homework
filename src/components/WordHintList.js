@@ -1,21 +1,23 @@
 import React from 'react';
 import WordHint from './WordHint';
+import PropTypes from 'prop-types';
 const WordHintList = (props) => {
-    const hintElements = props.moves.map((move, idx) => {
-        return (
-            <WordHint guess={move.guess} letterMatches={move.letterMatches} key={idx}/>
-        );
-    });
+  const hintElements = props.moves.map((move, idx) => {
     return (
-        <div className='word-hint-list'>
-            {hintElements}
-        </div>
+        <WordHint guess={move.guess} letterMatches={move.letterMatches}
+                  key={idx}/>
     );
+  });
+  return (
+      <div className='word-hint-list'>
+        {hintElements}
+      </div>
+  );
 };
 WordHintList.propTypes = {
-    moves: React.PropTypes.arrayOf(React.PropTypes.shape({
-        guess: React.PropTypes.string.isRequired,
-        letterMatches: React.PropTypes.array.isRequired,
-    })).isRequired
+  moves: PropTypes.arrayOf(PropTypes.shape({
+    guess: PropTypes.string.isRequired,
+    letterMatches: PropTypes.array.isRequired,
+  })).isRequired,
 };
 export default WordHintList;
