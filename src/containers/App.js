@@ -1,4 +1,5 @@
 import React from 'react';
+
 import GamesContainer from './GamesContainer';
 import GameContainer from './GameContainer';
 import GameCreationContainer from './GameCreationContainer';
@@ -25,7 +26,7 @@ const App = ({history}) => {
       </ConnectedRouter>
   );
 };
-
+//todo: prop tyep
 App.propTypes = {
   history: React.PropTypes.object.isRequired,
 };

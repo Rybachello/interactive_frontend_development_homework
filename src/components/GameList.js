@@ -15,7 +15,7 @@ const GameList = (props) => {
         game.status === 'finished') {
       return (
           <li key={game.id}>
-            <Link to={`/games/${game.id}`}>{game.type}: {game.status}</Link>
+            <Link to={`/games/${game.id}`}>{game.type}, {game.status}</Link>
           </li>
       );
     }
@@ -27,17 +27,17 @@ const GameList = (props) => {
       </div>
   );
 };
-//todo: fix types
-GameList.propTypes = {
-  games: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.string,
-    type: PropTypes.string,
-    status: PropTypes.string,
-    fetchState: PropTypes.object,
-    moves: PropTypes.array,
-  })),
-  onNumberSubmit: PropTypes.func,
-  onWordSubmit: PropTypes.func,
-  location: PropTypes.object
-};
+// //todo: fix types
+// GameList.propTypes = {
+//   games: PropTypes.arrayOf(PropTypes.shape({
+//     id: PropTypes.string,
+//     type: PropTypes.string,
+//     status: PropTypes.string,
+//     fetchState: PropTypes.object,
+//     moves: PropTypes.array,
+//   })),
+//   onNumberSubmit: PropTypes.func,
+//   onWordSubmit: PropTypes.func,
+//   location: PropTypes.object
+// };
 export default GameList;

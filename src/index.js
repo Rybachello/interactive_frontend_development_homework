@@ -16,7 +16,7 @@ const composeStoreEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
 const history = createBrowserHistory();
 
 let store = createStore(
-    connectRouter(history)(reducer), // Wrap top level reducer with `connectRouter`
+    connectRouter(history)(reducer),
     composeStoreEnhancers(
         applyMiddleware(
             routerMiddleware(history),
