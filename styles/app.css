@@ -20,6 +20,7 @@ body {
 .game-list{
     display: flex;
     flex-direction: column-reverse;
+    margin: 10px;
 }
 .connect-button{
     justify-content: center;

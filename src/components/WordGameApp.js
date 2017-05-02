@@ -32,7 +32,7 @@ WordGameApp.propTypes = {
     type: PropTypes.string,
     fetchState: PropTypes.shape({
       inFlight: PropTypes.bool,
-      error: PropTypes.string
+      error: PropTypes.object
     }).isRequired
   }).isRequired,
   onWordSubmit: PropTypes.func

@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import NumberGameApp from './NumberGameApp';
-import WordGameApp from './WordGameApp';
+import {Link} from 'react-router-dom';
 const GameList = (props) => {
-  const gameElements = props.games.map((game, idx) => {
-    if (game.type === 'guess_number') {
+  console.log(props);
+  const gameElements = props.games.map((game) => {
+    if (props.location.pathname === '/ongoingGames' &&
+        game.status !== 'finished') {
       return (
-          <NumberGameApp game={game} onNumberSubmit={props.onNumberSubmit}
-                         key={idx}>
-          </NumberGameApp>
+          <li key={game.id}>
+            <Link to={`/games/${game.id}`}>{game.type}, {game.status}</Link>
+          </li>
       );
-    } else if (game.type === 'guess_word') {
+    } else if (props.location.pathname === '/finishedGames' &&
+        game.status === 'finished') {
       return (
-          <WordGameApp game={game} onWordSubmit={props.onWordSubmit} key={idx}>
-          </WordGameApp>
+          <li key={game.id}>
+            <Link to={`/games/${game.id}`}>{game.type}: {game.status}</Link>
+          </li>
       );
     }
   });
@@ -24,6 +27,7 @@ const GameList = (props) => {
       </div>
   );
 };
+//todo: fix types
 GameList.propTypes = {
   games: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
@@ -34,5 +38,6 @@ GameList.propTypes = {
   })),
   onNumberSubmit: PropTypes.func,
   onWordSubmit: PropTypes.func,
+  location: PropTypes.object
 };
 export default GameList;

@@ -5,14 +5,17 @@ import {
   playerIdRecieved
 } from './index';
 import {connect} from '../WebSocket';
+import {push} from 'connected-react-router';
 
 let webSocketConnection = null;
 export const connectPlayer = ({name}) => (dispatch) => {
   webSocketConnection = connect({
     onOpen: () => {
+      dispatch(push('/'));
       dispatch(connectPlayerSucceeded());
     },
     onClose: ({reason}) => {
+      dispatch(push('/'));
       dispatch(disconnectPlayerSucceeded({reason}));
     },
     onMessage: ({eventName, payload}) => {

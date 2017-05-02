@@ -1,4 +1,5 @@
 import React from 'react';
+import GamesContainer from './GamesContainer';
 import GameContainer from './GameContainer';
 import GameCreationContainer from './GameCreationContainer';
 import GameLobbyContainer from './GameLobbyContainer';
@@ -17,8 +18,8 @@ const App = ({history}) => {
           <GameLobbyContainer/>
           <Route path="/createGame" component={GameCreationContainer}/>
           <Route path="/players" component={PlayerListContainer}/>
-          <Route path="/ongoingGames" component={GameContainer}/>
-          <Route path="/finishedGames" component={GameContainer}/>
+          <Route path="/ongoingGames" component={GamesContainer}/>
+          <Route path="/finishedGames" component={GamesContainer}/>
           <Route path="/games/:gameId" component={GameContainer}/>
         </div>
       </ConnectedRouter>
