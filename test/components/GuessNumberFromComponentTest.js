@@ -47,8 +47,9 @@ describe('GuessNumberForm', () => {
     expect(form).to.contain(<h4>Some Error</h4>);
   });
   it('renders the loading when request is on fly', () => {
-    const form = shallow(<GuessNumberForm fetchState={{inFlight: true, error: {}}}
-                                        onSubmit={sinon.stub()}/>);
+    const form = shallow(<GuessNumberForm
+        fetchState={{inFlight: true, error: {}}}
+        onSubmit={sinon.stub()}/>);
     expect(form).to.contain(<h2>Loading...</h2>);
   });
 });

@@ -11,7 +11,7 @@ const GameCreation = (props) => {
   if (props.inFlight) {
     return (
         <div className="input-forms">
-          <Header text='Create a game! '/>
+          <Header text='Create a game!'/>
           <h2>Loading...</h2>
         </div>
     );
