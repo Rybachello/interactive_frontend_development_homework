@@ -1,6 +1,6 @@
 import React from 'react';
-import WordHintList from './WordHintList';
-import GuessWordForm from './GuessWordForm';
+import WordHintList from './WordHintListComponent';
+import GuessWordForm from './GuessWordFormComponent';
 import PropTypes from 'prop-types';
 const WordGameApp = (props) => {
   if (props.game.status === 'waiting_for_move') {

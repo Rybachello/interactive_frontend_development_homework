@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import GameList from '../../src/components/GameList';
-import NumberGameApp from '../../src/components/NumberGameApp';
-import WordGameApp from '../../src/components/WordGameApp';
+import GameList from '../../src/components/GameListComponent';
+import NumberGameApp from '../../src/components/NumberGameAppComponent';
+import WordGameApp from '../../src/components/WordGameAppComponent';
 
 describe('GameList', () => {
   it('renders', () => {

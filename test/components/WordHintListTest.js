@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import WordHintList from '../../src/components/WordHintList';
-import WordHint from '../../src/components/WordHint';
+import WordHintList from '../../src/components/WordHintListComponent';
+import WordHint from '../../src/components/WordHintComponent';
 describe('WordHintList', () => {
 
     it('renders', () => {

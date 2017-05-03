@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import GuessNumberForm from '../../src/components/GuessNumberForm';
+import GuessNumberForm from '../../src/components/GuessNumberFormComponent';
 describe('GuessNumberForm', () => {
   it('renders', () => {
     expect(shallow(

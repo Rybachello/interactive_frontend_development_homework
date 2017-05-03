@@ -26,7 +26,6 @@ const App = ({history}) => {
       </ConnectedRouter>
   );
 };
-//todo: prop tyep
 App.propTypes = {
   history: React.PropTypes.object.isRequired,
 };

@@ -1,4 +1,8 @@
 body {
+    justify-content: center;
+    display: flex;
+}
+.app-header{
     margin: 50px;
     justify-content: center;
     display: flex;
@@ -26,3 +30,4 @@ body {
     justify-content: center;
     display: flex;
 }
+

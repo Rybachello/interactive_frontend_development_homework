@@ -1,39 +1,7 @@
-import React from 'react';
 import {guessPostRequested} from '../actions';
-import NumberGameApp from '../components/NumberGameApp';
-import WordGameApp from '../components/WordGameApp';
 import {connect} from 'react-redux';
-import PropTypes from 'prop-types';
+import GameOrNotFoundComponent from '../components/GameOrNotFoundComponent';
 
-const GameOrNotFound = ({game, gameId, onNumberSubmit, onWordSubmit}) => {
-  console.log(game);
-  if (game) {
-    if (game.type === 'guess_number') {
-      return (
-          <NumberGameApp game={game} onNumberSubmit={onNumberSubmit} />
-      );
-    } else if (game.type === 'guess_word') {
-      return (
-          <WordGameApp game={game} onWordSubmit={onWordSubmit}/>
-      );
-    }
-  } else {
-    return <p>Game {gameId} not found</p>;
-  }
-};
-//todo: fix prop types
-// GameOrNotFound.propTypes = {
-//   game: PropTypes.arrayOf(PropTypes.shape({
-//     id: PropTypes.string,
-//     type: PropTypes.string,
-//     status: PropTypes.string,
-//     fetchState: PropTypes.object,
-//     moves: PropTypes.array,
-//   })),
-//   onNumberSubmit: PropTypes.func,
-//   onWordSubmit: PropTypes.func,
-//   gameId: PropTypes.string.isRequired,
-// };
 const mapDispatchToProps = (dispatch) => ({
   onNumberSubmit: (number, id) => dispatch(guessPostRequested(number, id)),
   onWordSubmit: (word, id) => dispatch(guessPostRequested(word, id)),
@@ -44,4 +12,5 @@ const mapStateToProps = (state, ownProps) => {
   return {game, gameId: gameId};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(GameOrNotFound);
+export default connect(mapStateToProps, mapDispatchToProps)(
+    GameOrNotFoundComponent);

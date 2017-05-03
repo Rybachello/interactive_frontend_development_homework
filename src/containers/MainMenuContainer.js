@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import AppMenuHeader from '../components/AppMenuHeader';
+import AppMenuHeader from '../components/AppMenuHeaderComponent';
 
 const mapStateToProps = (state) => ({
   status: state.connection.status

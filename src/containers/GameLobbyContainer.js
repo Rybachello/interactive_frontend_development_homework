@@ -3,7 +3,7 @@ import {
   connectPlayerRequested,
   disconnectPlayerRequested
 } from '../actions';
-import GameLobby from '../components/GameLobby';
+import GameLobby from '../components/GameLobbyComponent';
 
 const mapDispatchToProps = (dispatch) => ({
   onConnectClick: (name) => dispatch(connectPlayerRequested(name)),

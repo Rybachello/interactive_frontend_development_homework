@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow, render} from 'enzyme';
-import GameLobby from '../../src/components/GameLobby';
+import GameLobby from '../../src/components/GameLobbyComponent';
 import LoggingComponent from '../../src/components/LoggingComponent';
-import Header from '../../src/components/Header';
+import Header from '../../src/components/HeaderComponent';
 describe('GameLobby', () => {
 
   it('renders', () => {

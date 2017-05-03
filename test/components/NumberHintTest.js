@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow, render} from 'enzyme';
 
-import NumberHint from '../../src/components/NumberHint';
+import NumberHint from '../../src/components/NumberHintComponent';
 describe('NumberHint', () => {
     it('renders', () => {
         expect(shallow(

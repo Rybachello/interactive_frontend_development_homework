@@ -1,8 +1,8 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import WordGameApp from '../../src/components/WordGameApp';
-import GuessWordForm from '../../src/components/GuessWordForm';
-import WordHintList from '../../src/components/WordHintList';
+import WordGameApp from '../../src/components/WordGameAppComponent';
+import GuessWordForm from '../../src/components/GuessWordFormComponent';
+import WordHintList from '../../src/components/WordHintListComponent';
 
 describe('Word Game App', () => {
   it('renders', () => {
