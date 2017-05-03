@@ -1,6 +1,6 @@
 import React from 'react';
-import GuessNumberForm from './GuessNumberForm';
-import NumberHintList from './NumberHintList';
+import GuessNumberForm from './GuessNumberFormComponent';
+import NumberHintList from './NumberHintListComponent';
 import PropTypes from 'prop-types';
 const NumberGameApp = (props) => {
   if (props.game.status === 'waiting_for_move') {
@@ -32,7 +32,7 @@ NumberGameApp.propTypes = {
     type: PropTypes.string,
     fetchState: PropTypes.shape({
       inFlight: PropTypes.bool,
-      error: PropTypes.string,
+      error: PropTypes.object,
     })
   }).isRequired,
   onNumberSubmit: PropTypes.func,

@@ -1,5 +1,5 @@
 import React from 'react';
-import WordHint from './WordHint';
+import WordHint from './WordHintComponent';
 import PropTypes from 'prop-types';
 const WordHintList = (props) => {
   const hintElements = props.moves.map((move, idx) => {

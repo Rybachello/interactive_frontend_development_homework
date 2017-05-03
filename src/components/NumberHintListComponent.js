@@ -1,5 +1,5 @@
 import React from 'react';
-import NumberHint from './NumberHint';
+import NumberHint from './NumberHintComponent';
 import PropTypes from 'prop-types';
 const NumberHintList = (props) => {
   const hintElements = props.moves.map((move, idx) => {

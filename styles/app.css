@@ -1,4 +1,8 @@
 body {
+    justify-content: center;
+    display: flex;
+}
+.app-header{
     margin: 50px;
     justify-content: center;
     display: flex;
@@ -20,8 +24,10 @@ body {
 .game-list{
     display: flex;
     flex-direction: column-reverse;
+    margin: 10px;
 }
 .connect-button{
     justify-content: center;
     display: flex;
 }
+

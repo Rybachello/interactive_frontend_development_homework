@@ -7,14 +7,19 @@ import gameServerMiddleware from './middlewares/GameServerMiddleware';
 import connectionMiddleware from './middlewares/ConnectionMiddleware';
 import reducer from './reducers/index';
 import App from './containers/App';
+import {createBrowserHistory} from 'history';
+import {connectRouter, routerMiddleware} from 'connected-react-router';
 
 const composeStoreEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ||
     compose;
 
+const history = createBrowserHistory();
+
 let store = createStore(
-    reducer,
+    connectRouter(history)(reducer),
     composeStoreEnhancers(
         applyMiddleware(
+            routerMiddleware(history),
             thunk,
             gameServerMiddleware,
             connectionMiddleware,
@@ -24,7 +29,7 @@ let store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-      <App />
+      <App history={history}/>
     </Provider>,
     document.getElementById('root'),
 );

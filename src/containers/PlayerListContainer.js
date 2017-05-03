@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import PlayerList from '../components/PlayersList';
+import PlayerList from '../components/PlayersListComponent';
 
 const mapStateToProps = (state) => ({
   players: state.connection.players,

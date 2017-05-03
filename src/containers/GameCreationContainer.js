@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import {createGamePostRequested} from '../actions';
-import GameCreation from '../components/GameCreation';
+import GameCreation from '../components/GameCreationComponent';
 
 const mapDispatchToProps = (dispatch) => ({
     createGame: (type) => dispatch(createGamePostRequested(type))

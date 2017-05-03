@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
+import Header from './HeaderComponent';
 const GameCreation = (props) => {
   if (props.status !== 'connected') {
     return (
@@ -11,7 +11,7 @@ const GameCreation = (props) => {
   if (props.inFlight) {
     return (
         <div className="input-forms">
-          <Header text='Create a game! '/>
+          <Header text='Create a game!'/>
           <h2>Loading...</h2>
         </div>
     );
